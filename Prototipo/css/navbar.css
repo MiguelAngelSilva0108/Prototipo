@@ -63,13 +63,6 @@
   font-weight: 400;
 }
 
-@media (min-width: 992px) {
-  .carousel-full {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
 
 
 

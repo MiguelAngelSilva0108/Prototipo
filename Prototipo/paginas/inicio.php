@@ -18,9 +18,9 @@
 
 
 <body>
-    <p class="Hola">texto de prueba en css</p>
+   
     <div>
-        <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-full">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide ">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
