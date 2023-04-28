@@ -6,12 +6,12 @@ $message = '';
 
 
 //Recibiendo numInt
-if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_POST['Apellido Materno']) && !empty($_POST['Celular']) && !empty($_POST['Email']) && !empty($_POST['password']) && !empty($_POST['Servicio']) && !empty($_POST['Calle']) && !empty($_POST['Colonia']) && !empty($_POST['NumExt']) && !empty($_POST['Municipio']) && !empty($_POST['CP']) && !empty($_POST['Estado']) && !empty($_POST['RFC']) && !empty($_POST['Nombre Condominio']) && !empty($_POST['Calle Condominio']) && !empty($_POST['Colonia Condominio']) && !empty($_POST['NumExt Condominio']) && !empty($_POST['Municipio Condominio']) && !empty($_POST['CP Condominio']) && !empty($_POST['Estado Condominio'])) {
-    $sql = "INSERT INTO users (Nombres, Apellido Paterno, Apellido Materno, Celular, Email, password, Servicio, Calle, Colonia, NumExt, NumInt, Municipio, CP, Estado, RFC, Nombre Condominio, Calle Condominio, Colonia Condominio, NumExt Condominio, NumInt Condominio, Municipio Condominio, CP Condominio, Estado Condominio) VALUES (:Nombres, :Apellido Paterno, :Apellido Materno, :Celular, :Email, :password, :Servicio, :Calle, :Colonia, :NumExt, :NumInt, :Municipio, :CP, :Estado, :Nombre Condominio, :RFC, :Calle Condominio, :Colonia Condominio, :NumExt Condominio, :NumInt Condominio, :Municipio Condominio, :CP Condominio, :Estado Condominio)";
+if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) && !empty($_POST['Celular']) && !empty($_POST['Email']) && !empty($_POST['password']) && !empty($_POST['Servicio']) && !empty($_POST['Calle']) && !empty($_POST['Colonia']) && !empty($_POST['NumExt']) && !empty($_POST['Municipio']) && !empty($_POST['CP']) && !empty($_POST['Estado']) && !empty($_POST['RFC']) && !empty($_POST['Nombre_Condominio']) && !empty($_POST['Calle_Condominio']) && !empty($_POST['Colonia_Condominio']) && !empty($_POST['NumExt_Condominio']) && !empty($_POST['Municipio_Condominio']) && !empty($_POST['CP_Condominio']) && !empty($_POST['Estado_Condominio'])) {
+    $sql = "INSERT INTO users (Nombres, AP, AM, Celular, Email, password, Servicio, Calle, Colonia, NumExt, NumInt, Municipio, CP, Estado, RFC, Nombre_Condominio, Calle_Condominio, Colonia_Condominio, NumExt_Condominio, Municipio_Condominio, CP_Condominio, Estado_Condominio) VALUES (:Nombres, :AP, :AM, :Celular, :Email, :password, :Servicio, :Calle, :Colonia, :NumExt, :NumInt, :Municipio, :CP, :Estado, :Nombre_Condominio, :RFC, :Calle_Condominio, :Colonia_Condominio, :NumExt_Condominio, :Municipio_Condominio, :CP_Condominio, :Estado_Condominio)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':Nombres', $_POST['Nombres']);
-    $stmt->bindParam(':Apellido Paterno', $_POST['Apellido Paterno']);
-    $stmt->bindParam(':Apellido Materno', $_POST['Apellido Materno']);
+    $stmt->bindParam(':AP', $_POST['AP']);
+    $stmt->bindParam(':AM', $_POST['AM']);
     $stmt->bindParam(':Celular', $_POST['Celular']);
     $stmt->bindParam(':Email', $_POST['Email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -29,19 +29,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_
     $stmt->bindParam(':CP', $_POST['CP']);
     $stmt->bindParam(':Estado', $_POST['Estado']);
     //Datos de condominio
-    $stmt->bindParam(':Nombre Condominio', $_POST['Nombre Condominio']);
+    $stmt->bindParam(':Nombre_Condominio', $_POST['Nombre_Condominio']);
     $stmt->bindParam(':RFC', $_POST['RFC']);
-    $stmt->bindParam(':Calle Condominio', $_POST['Calle Condominio']);
-    $stmt->bindParam(':Colonia Condominio', $_POST['Colonia Condominio']);
-    $stmt->bindParam(':NumExt Condominio', $_POST['NumExt Condominio']);
-    if (!empty($_POST['NumInt Condominio'])) {
-        $stmt->bindParam(':NumInt Condominio', $_POST['NumInt Condominio']);
-    } else {
-        $stmt->bindValue(':NumInt Condominio', null, PDO::PARAM_NULL);
-    }
-    $stmt->bindParam(':Municipio Condominio', $_POST['Municipio Condominio']);
-    $stmt->bindParam(':CP Condominio', $_POST['CP Condominio']);
-    $stmt->bindParam(':Estado Condominio', $_POST['Estado Condominio']);
+    $stmt->bindParam(':Calle_Condominio', $_POST['Calle_Condominio']);
+    $stmt->bindParam(':Colonia_Condominio', $_POST['Colonia_Condominio']);
+    $stmt->bindParam(':NumExt_Condominio', $_POST['NumExt_Condominio']);
+    $stmt->bindParam(':Municipio_Condominio', $_POST['Municipio_Condominio']);
+    $stmt->bindParam(':CP_Condominio', $_POST['CP_Condominio']);
+    $stmt->bindParam(':Estado_Condominio', $_POST['Estado_Condominio']);
 
     if ($stmt->execute()) {
         $message = 'Usuario creado, inicie sesión';
@@ -112,13 +107,13 @@ if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_
                                 </div>
                                 <!--Apellido Paterno-->
                                 <div class="form-floating mb-3">
-                                    <input type="text" name='Apellido Paterno' class="form-control" id="floatingInput"
+                                    <input type="text" name='AP' class="form-control" id="floatingInput"
                                         placeholder="name@example.com" required />
                                     <label htmlFor="floatingInput">Apellido Paterno</label>
                                 </div>
-                                <!--Apellido Materno-->
+                                <!--AP-->
                                 <div class="form-floating mb-3">
-                                    <input type="text" name='Apellido Materno' class="form-control" id="floatingInput"
+                                    <input type="text" name='AM' class="form-control" id="floatingInput"
                                         placeholder="name@example.com" />
                                     <label htmlFor="floatingInput">Apellido Materno</label>
                                 </div>
@@ -282,7 +277,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_
 
                                 <!--Nombres-->
                                 <div class="form-floating mb-3">
-                                    <input type="text" name='Nombre Condominio' class="form-control" id="floatingInput"
+                                    <input type="text" name='Nombre_Condominio' class="form-control" id="floatingInput"
                                         placeholder="name@example.com" required />
                                     <label htmlFor="floatingInput">Nombre del condominio</label>
                                 </div>
@@ -291,14 +286,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_
                                 <div class="row g-2">
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
-                                            <input type="text" name='Calle Condominio' class="form-control"
+                                            <input type="text" name='Calle_Condominio' class="form-control"
                                                 id="floatingInputGrid" placeholder="name@example.com" />
                                             <label htmlFor="floatingInputGrid">Calle</label>
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
-                                            <input type="text" name='NumExt Condominio' class="form-control"
+                                            <input type="text" name='NumExt_Condominio' class="form-control"
                                                 id="floatingInputGrid" placeholder="name@example.com" />
                                             <label htmlFor="floatingInputGrid">Num ext</label>
 
@@ -308,7 +303,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_
 
                                 <!--Número ext e int-->
                                 <div class="form-floating mb-3">
-                                    <input type="text" name='Colonia Condominio' class="form-control" id="floatingInputGrid"
+                                    <input type="text" name='Colonia_Condominio' class="form-control" id="floatingInputGrid"
                                         placeholder="name@example.com" />
                                     <label htmlFor="floatingInputGrid">Colonia</label>
                                 </div>
@@ -318,14 +313,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_
                                 <div class="row g-2">
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
-                                            <input type="text" name='Municipio Condominio' class="form-control"
+                                            <input type="text" name='Municipio_Condominio' class="form-control"
                                                 id="floatingInputGrid" placeholder="name@example.com" />
                                             <label htmlFor="floatingInputGrid">Alcaldia o Municipio</label>
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
-                                            <input type="text" name='CP Condominio' class="form-control"
+                                            <input type="text" name='CP_Condominio' class="form-control"
                                                 id="floatingInputGrid" placeholder="name@example.com" />
                                             <label htmlFor="floatingInputGrid">C.P.</label>
                                         </div>
@@ -334,7 +329,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_
 
                                 <!--Estado*-->
                                 <div class="form-floating mb-3">
-                                    <select class="form-select" name='Estado Condominio' id="floatingSelect"
+                                    <select class="form-select" name='Estado_Condominio' id="floatingSelect"
                                         aria-label="Floating label select example" defaultValue="">
 
                                         <option value="">Seleccione un Estado</option>
