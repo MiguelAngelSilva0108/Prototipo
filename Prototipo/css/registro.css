@@ -35,21 +35,38 @@
 }
 
 
-.btn-primary:hover {
-  background-color: #fff;
-  color: #e83e8c;
-  border-color: #e83e8c;
+.btn-primary {
+ 
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  border-color: black;
+  border-radius: 15px;
+  padding: 15px;
+  width: 160px;
+  margin: auto;
+  color: white;
+  display: block;
+  margin: 0 auto;
 }
 
-.btn-primary {
-  background-color: #e83e8c;
-  border-color: #e83e8c;
-  color: #fff;
-  font-size: 25px;
-  padding: 5px 25px;
-  font-family: 'Poppins', sans-serif;
-  border-radius:25px;
+.btn{
+  align-self: center;
 }
+
+.btn-primary:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary span {
+  background-color: #F5DEB3;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px;
+  color: black;
+}
+
 
 .card-footer{
   font-family: 'Poppins', sans-serif;

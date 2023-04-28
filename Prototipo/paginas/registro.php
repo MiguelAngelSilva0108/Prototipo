@@ -6,12 +6,12 @@ $message = '';
 
 
 //Recibiendo numInt
-if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) && !empty($_POST['Celular']) && !empty($_POST['Email']) && !empty($_POST['password']) && !empty($_POST['Servicio']) && !empty($_POST['Calle']) && !empty($_POST['Colonia']) && !empty($_POST['NumExt']) && !empty($_POST['Municipio']) && !empty($_POST['CP']) && !empty($_POST['Estado']) && !empty($_POST['RFC']) && !empty($_POST['Calle_Fiscal']) && !empty($_POST['Colonia_Fiscal']) && !empty($_POST['NumExt_Fiscal']) && !empty($_POST['Municipio_Fiscal']) && !empty($_POST['CP_Fiscal']) && !empty($_POST['Estado_Fiscal'])) {
-    $sql = "INSERT INTO users (Nombres, AP, AM, Celular, Email, password, Servicio, Calle, Colonia, NumExt, NumInt, Municipio, CP, Estado, RFC, Calle_Fiscal, Colonia_Fiscal, NumExt_Fiscal, NumInt_Fiscal, Municipio_Fiscal, CP_Fiscal, Estado_Fiscal) VALUES (:Nombres, :AP, :AM, :Celular, :Email, :password, :Servicio, :Calle, :Colonia, :NumExt, :NumInt, :Municipio, :CP, :Estado, :RFC, :Calle_Fiscal, :Colonia_Fiscal, :NumExt_Fiscal, :NumInt_Fiscal, :Municipio_Fiscal, :CP_Fiscal, :Estado_Fiscal)";
+if (!empty($_POST['Nombres']) && !empty($_POST['Apellido Paterno']) && !empty($_POST['Apellido Materno']) && !empty($_POST['Celular']) && !empty($_POST['Email']) && !empty($_POST['password']) && !empty($_POST['Servicio']) && !empty($_POST['Calle']) && !empty($_POST['Colonia']) && !empty($_POST['NumExt']) && !empty($_POST['Municipio']) && !empty($_POST['CP']) && !empty($_POST['Estado']) && !empty($_POST['RFC']) && !empty($_POST['Calle_Fiscal']) && !empty($_POST['Colonia_Fiscal']) && !empty($_POST['NumExt_Fiscal']) && !empty($_POST['Municipio_Fiscal']) && !empty($_POST['CP_Fiscal']) && !empty($_POST['Estado_Fiscal'])) {
+    $sql = "INSERT INTO users (Nombres, Apellido Paterno, Apellido Materno, Celular, Email, password, Servicio, Calle, Colonia, NumExt, NumInt, Municipio, CP, Estado, RFC, Calle_Fiscal, Colonia_Fiscal, NumExt_Fiscal, NumInt_Fiscal, Municipio_Fiscal, CP_Fiscal, Estado_Fiscal) VALUES (:Nombres, :Apellido Paterno, :Apellido Materno, :Celular, :Email, :password, :Servicio, :Calle, :Colonia, :NumExt, :NumInt, :Municipio, :CP, :Estado, :RFC, :Calle_Fiscal, :Colonia_Fiscal, :NumExt_Fiscal, :NumInt_Fiscal, :Municipio_Fiscal, :CP_Fiscal, :Estado_Fiscal)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':Nombres', $_POST['Nombres']);
-    $stmt->bindParam(':AP', $_POST['AP']);
-    $stmt->bindParam(':AM', $_POST['AM']);
+    $stmt->bindParam(':Apellido Paterno', $_POST['Apellido Paterno']);
+    $stmt->bindParam(':Apellido Materno', $_POST['Apellido Materno']);
     $stmt->bindParam(':Celular', $_POST['Celular']);
     $stmt->bindParam(':Email', $_POST['Email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -63,6 +63,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="icon" href="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -74,9 +75,10 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 <body>
     <?PHP require('../navbar/navbar.php'); ?>
     <div>
-        <a href="/LoginFactura/index.php">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Logotipo_izzi_negativo.png" width="120"
-                height="50" class="rounded mx-auto d-block" alt="...">
+        <a href="/Prototipo/index.php">
+
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png" alt="Logo"
+                width="50" height="50" class="rounded mx-auto d-block" />
         </a>
 
         <?php if (!empty($message)): ?>
@@ -85,7 +87,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
             </p>
         <?php endif; ?>
 
-        <p class="text-center" style="font-family: Poppins; font-size: 24px;">Registre todos sus datos.</p>
+        <p class="text-center" style="font-family: Poppins; font-size: 24px;">CondoSmart 24/7 para ti</p>
 
 
         <div class='registro'>
@@ -97,21 +99,24 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                 ¡Sólo te tomará un par de minutos!
                             </div>
                             <div class="card-body">
+                            <div class="card-header">
+                                    Datos del Administrador
+                                </div>
                                 <!--Nombres-->
                                 <div class="form-floating mb-3">
                                     <input type="text" name='Nombres' class="form-control" id="floatingInput"
                                         placeholder="name@example.com" required />
                                     <label htmlFor="floatingInput">Nombres</label>
                                 </div>
-                                <!--AP-->
+                                <!--Apellido Paterno-->
                                 <div class="form-floating mb-3">
-                                    <input type="text" name='AP' class="form-control" id="floatingInput"
+                                    <input type="text" name='Apellido Paterno' class="form-control" id="floatingInput"
                                         placeholder="name@example.com" required />
                                     <label htmlFor="floatingInput">Apellido Paterno</label>
                                 </div>
-                                <!--AM-->
+                                <!--Apellido Materno-->
                                 <div class="form-floating mb-3">
-                                    <input type="text" name='AM' class="form-control" id="floatingInput"
+                                    <input type="text" name='Apellido Materno' class="form-control" id="floatingInput"
                                         placeholder="name@example.com" />
                                     <label htmlFor="floatingInput">Apellido Materno</label>
                                 </div>
@@ -139,13 +144,13 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <label htmlFor="floatingPassword">Contraseña</label>
                                 </div>
 
-                                <!--Botón de confirmar contraseña
+                                <!--Botón de confirmar contraseña-->
                                 <div class="form-floating mb-3">
                                     <input type="password" name='confirmpassword' class="form-control"
                                         id="floatingPassword" placeholder="Password" />
                                     <label htmlFor="floatingPassword">Confirma contraseña</label>
                                 </div>
-                                -->
+                                
 
                                 <!--Servicio deseado-->
                                 <div class="form-floating mb-3">
@@ -267,7 +272,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <label htmlFor="floatingInput">RFC</label>
                                 </div>
                                 <div class="card-header">
-                                    DATOS FISCALES
+                                    Datos del condominio
                                 </div>
                                 <!--Dirección FISCAL-->
                                 <!--Calle y Colonia-->
@@ -369,10 +374,8 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 
                                 <!--Fin de formulario-->
 
-                                <div class="btn-group" role="group" aria-label="Basic example">
-
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
-
+                                <div class="d-grid gap-2 mb-3">
+                                    <button class="btn btn-primary" type="submit">Iniciar sesión</button>
                                 </div>
 
                                 <div class="card-footer">
