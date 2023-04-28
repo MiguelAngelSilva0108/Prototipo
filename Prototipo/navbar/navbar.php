@@ -22,28 +22,41 @@ if (isset($_SESSION['user_id'])) {
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/LoginFactura/index.php">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Logotipo_izzi_negativo.png" alt="Logo"
-                width="120" height="50" class="d-inline-block align-text-top" />
+        <a class="navbar-brand" href="/Prototipo/index.php">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png" alt="Logo"
+                width="50" height="50" class="d-inline-block align-text-top" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+         <!-- Inicio--> 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/LoginFactura/index.php">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/Prototipo/paginas/index.php">Inicio</a>
+                </li>
+                <!--Planes--> 
+                <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/Prototipo/paginas/planes.php">Planes</a>
+                </li>
+                 <!--Servicios--> 
+                 <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/Prototipo/paginas/servicios.php">Servicios</a>
                 </li>
 
                 <!-- Cambio en inicio de sesión --> 
 
                 <?php if (!empty($user)): ?>
                     <li class="nav-item">
-                    <a class="nav-link" href="/LoginFactura/index.php"> <?= $user['Email']; ?></a>
+                    <a class="nav-link" href="/Prototipo/index.php"> <?= $user['Email']; ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/LoginFactura/paginas/logout.php">Cerrar Sesión</a>
+                    <a class="nav-link" href="/Prototipo/paginas/logout.php">Cerrar Sesión</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -59,7 +72,7 @@ if (isset($_SESSION['user_id'])) {
 
                 <?php else: ?>
                     <li class="nav-item">
-                    <a class="nav-link" href="/LoginFactura/paginas/login.php">Iniciar sesión</a>
+                    <a class="nav-link" href="/Prototipo/paginas/login.php">Iniciar sesión</a>
                 </li>
                 <?php endif; ?>
 

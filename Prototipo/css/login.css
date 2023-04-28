@@ -39,13 +39,31 @@
 }
 
 .btn-primary {
-  background-color: #F0228D;
-  border-color: #F0228D;
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  border-color: black;
   border-radius: 15px;
   padding: 10px;
   width: 150px;
   margin: auto;
+  color: white;
 }
+
+.btn-primary:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary span {
+  background-color: #F5DEB3;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px;
+  color: black;
+}
+
+
 
 .input-group{
   margin-top: 25px;

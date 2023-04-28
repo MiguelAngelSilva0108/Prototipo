@@ -65,20 +65,18 @@ if (!empty($_POST['Email']) && !empty($_POST['password'])) {
     <!--Resto del código de la página de inicio de sesión-->
 
     <div class='imagen'>
-        <img src="https://queplan.mx/sites/default/files/inline-images/izzi-1.png" class="img-fluid" alt="Logo"
+        <img src="/Prototipo/imagenes/CondominoLogin.png" class="img-fluid" alt="Logo"
             width="320" height="206.5"></img>
     </div>
     <div class='texto'>
-        En izzi, lo que más nos importa
-        es tu conexión.
+        CondoSmart, el futuro de los condominios
     </div>
     <form action="login.php" method="post">
         <div class="row">
             <div class="col-sm-4 offset-3 mt-5 mx-auto">
                 <div class="card pt=5">
                     <div class="card-header">
-                        Inicia sesión con tus credenciales izzi
-                        para extenderte tu factura
+                        Inicia sesión y continua esta gran experiencia
                     </div>
                     <div class="card-body">
                         <!--Botón de usuario-->
