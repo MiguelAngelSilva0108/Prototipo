@@ -77,3 +77,76 @@
   width: 100%;
   height: 100%;
 }
+
+.navbar-nav a:hover {
+  background-color: grey;
+}
+
+.flex-inicio{
+  margin-top: 80px;
+  margin-left: 80px;
+  margin-bottom: 50px;
+}
+
+.explicacion{
+  text-align: justify;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15em;
+  font-weight: 500;
+}
+
+.Satisfaccion{
+  margin-right: 80px;
+  margin-left: 30px;
+}
+
+h2 {
+  font-size: 2rem; /* tamaño de fuente inicial */
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3rem; /* tamaño de fuente para pantallas más grandes */
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 1 1 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-item {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+.flex-container{
+  margin-top: 5px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.iconos{
+  height: 100px;
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.iconos-texto{
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #000000;
+  text-decoration: none !important;
+  border-bottom: none;
+}
