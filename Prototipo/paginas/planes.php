@@ -13,8 +13,11 @@
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/registro.css">
 <link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/footer.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 <?PHP require('../navbar/navbar.php'); ?>
 </body>
+<?PHP require('../footer/footer.php');
+?>
 </html>

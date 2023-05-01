@@ -13,11 +13,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 </head>
-<?PHP require('./navbar/navbar.php');
+<?PHP require('../../navbar/navbar.php');
 ?>
-<link rel="stylesheet" href="./css/bootstrap.min.css" />
-<link rel="stylesheet" href="./css/navbar.css">
-<link rel="stylesheet" href="./css/footer.css">
+<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../css/navbar.css">
+<link rel="stylesheet" href="../../css/footer.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -25,10 +25,11 @@
 
 <body>
 
- 
 
-  
+
+<?PHP require('../../footer/footer.php');
+?>
 </body>
-<?PHP require('./footer/footer.php');
-  ?>
+
+
 </html>
