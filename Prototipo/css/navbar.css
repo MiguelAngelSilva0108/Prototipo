@@ -65,6 +65,16 @@
   font-weight: 400;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-size: 100% 100%;
+}
+
 
 .carousel-container {
   max-width: 100%;
@@ -103,7 +113,7 @@
 h2 {
   font-size: 2rem; /* tamaño de fuente inicial */
   font-family: 'Nunito', sans-serif;
-  text-align: center;
+  text-align: left;
   font-weight: 700;
 }
 
@@ -134,6 +144,7 @@ h2 {
   margin-top: 5px;
   margin-left: 80px;
   margin-right: 80px;
+  margin-bottom: 15px;
 }
 
 .iconos{
@@ -149,4 +160,13 @@ h2 {
   color: #000000;
   text-decoration: none !important;
   border-bottom: none;
+}
+
+.imagenes{
+  margin-bottom: 15px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }

@@ -24,7 +24,7 @@
 
 
 <body>
-
+  <!--carrusel-->
   <div class="carousel-container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-
+  <!--SERVICIOS-->
   <div class="container inicio">
     <div class="flex-inicio">
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
@@ -78,29 +78,84 @@
       </div>
     </div>
   </div>
-
+  <!--icónos-->
   <div class="container imagenes">
     <div class="flex-container">
       <div class="flex-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
-        <p class="iconos-texto">Vigilancia 24/7</p>
-      </div>
-      <div class="flex-item">
-        <a class="text-decoration-none" href="./servicios/unitarios/impermeabilizacion.php">
-        <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
-        <p class="iconos-texto">Impermeabilización</p>
+        <a  href="./servicios/unitarios/vigilancia.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
+          <p class="iconos-texto">Vigilancia 24/7</p>
         </a>
       </div>
       <div class="flex-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
-        <p class="iconos-texto">Pintura Interior y Exterior</p>
+        <a  href="./servicios/unitarios/impermeabilizacion.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
+          <p class="iconos-texto">Impermeabilización</p>
+        </a>
       </div>
       <div class="flex-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen" class="iconos">
-        <p class="iconos-texto">Limpieza de Albercas</p>
+        <a  href="./servicios/unitarios/pintura.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
+          <p class="iconos-texto">Pintura Interior y Exterior</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a  href="./servicios/unitarios/albercas.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
+            class="iconos">
+          <p class="iconos-texto">Limpieza de Albercas</p>
+        </a>
       </div>
     </div>
   </div>
+<br>
+  <div class="container inicio">
+    <div class="flex-inicio">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="text-md-start mb-3 mb-md-0 me-md-5">
+          <h2>PLANES ESPECIALIZADOS EN CONDOMINIOS</h2>
+          <p class="explicacion">
+            Diagnosticamos, prevenimos y diseñamos soluciones de mantenimiento industrial, tanto preventivo como
+            correctivo para cualquier sector industrial. Sobre todo, siempre buscamos optimizar todos los recursos
+            humanos, materiales y económicos. De igual manera, nos anticipamos y medimos los riesgos para ejecutar cada
+            proyecto en tiempo, forma y con la máxima seguridad. Como resultado, cubrimos las necesidades de cada
+            cliente. Los servicios de mantenimiento industrial incluyen:
+          </p>
+        </div>
+        <div class="text-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/3930/3930204.png" alt="Mantenimiento industrial"
+            class="Satisfaccion" height="150" width="150">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="flex-container">
+      <div class="flex-item">
+        <a  href="./servicios/planes/basico.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png" alt="Basico" class="iconos">
+          <p class="iconos-texto">Plan Básico</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a  href="./servicios/planes/intermedio.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/916/916771.png" alt="Impermeabilización" class="iconos">
+          <p class="iconos-texto">Plan Intermedio</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a  href="./servicios/planes/avanzado.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/2451/2451655.png" alt="Pintura" class="iconos">
+          <p class="iconos-texto">Plan Servicio Completo</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
 
   <?PHP require('./footer/footer.php');
   ?>
