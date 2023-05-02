@@ -64,11 +64,10 @@
         <div class="text-md-start mb-3 mb-md-0 me-md-5">
           <h2>SERVICIOS ESPECIALIZADOS EN CONDOMINIOS</h2>
           <p class="explicacion">
-            Diagnosticamos, prevenimos y diseñamos soluciones de mantenimiento industrial, tanto preventivo como
-            correctivo para cualquier sector industrial. Sobre todo, siempre buscamos optimizar todos los recursos
-            humanos, materiales y económicos. De igual manera, nos anticipamos y medimos los riesgos para ejecutar cada
-            proyecto en tiempo, forma y con la máxima seguridad. Como resultado, cubrimos las necesidades de cada
-            cliente. Los servicios de mantenimiento industrial incluyen:
+            Bienvenidos a nuestra empresa, líder en servicios de administración, mantenimiento y vigilancia para
+            condominios. Nos dedicamos a proporcionar soluciones integrales para garantizar la tranquilidad y el
+            bienestar de los residentes en su comunidad.
+            Tenemos servicios de mantenimiento a los condominios, los cuales son:
           </p>
         </div>
         <div class="text-center">
@@ -82,25 +81,25 @@
   <div class="container imagenes">
     <div class="flex-container">
       <div class="flex-item">
-        <a  href="./servicios/unitarios/vigilancia.php">
+        <a href="./servicios/unitarios/vigilancia.php">
           <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
           <p class="iconos-texto">Vigilancia 24/7</p>
         </a>
       </div>
       <div class="flex-item">
-        <a  href="./servicios/unitarios/impermeabilizacion.php">
+        <a href="./servicios/unitarios/impermeabilizacion.php">
           <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
           <p class="iconos-texto">Impermeabilización</p>
         </a>
       </div>
       <div class="flex-item">
-        <a  href="./servicios/unitarios/pintura.php">
+        <a href="./servicios/unitarios/pintura.php">
           <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
           <p class="iconos-texto">Pintura Interior y Exterior</p>
         </a>
       </div>
       <div class="flex-item">
-        <a  href="./servicios/unitarios/albercas.php">
+        <a href="./servicios/unitarios/albercas.php">
           <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
             class="iconos">
           <p class="iconos-texto">Limpieza de Albercas</p>
@@ -108,18 +107,18 @@
       </div>
     </div>
   </div>
-<br>
+  <br>
   <div class="container inicio">
     <div class="flex-inicio">
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div class="text-md-start mb-3 mb-md-0 me-md-5">
           <h2>PLANES ESPECIALIZADOS EN CONDOMINIOS</h2>
           <p class="explicacion">
-            Diagnosticamos, prevenimos y diseñamos soluciones de mantenimiento industrial, tanto preventivo como
-            correctivo para cualquier sector industrial. Sobre todo, siempre buscamos optimizar todos los recursos
-            humanos, materiales y económicos. De igual manera, nos anticipamos y medimos los riesgos para ejecutar cada
-            proyecto en tiempo, forma y con la máxima seguridad. Como resultado, cubrimos las necesidades de cada
-            cliente. Los servicios de mantenimiento industrial incluyen:
+            Ofrecemos tres planes de contratación adaptados a las necesidades de cada condominio. El plan básico, el
+            plan medio y el plan completo
+            Todos nuestros planes tienen descuentos al contratar de forma semestral y anual, lo que permite a los
+            condominios ahorrar dinero y tener una gestión administrativa y de mantenimiento efectiva y eficiente a
+            largo plazo.
           </p>
         </div>
         <div class="text-center">
@@ -133,19 +132,19 @@
   <div class="container">
     <div class="flex-container">
       <div class="flex-item">
-        <a  href="./servicios/planes/basico.php">
+        <a href="./servicios/planes/basico.php">
           <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png" alt="Basico" class="iconos">
           <p class="iconos-texto">Plan Básico</p>
         </a>
       </div>
       <div class="flex-item">
-        <a  href="./servicios/planes/intermedio.php">
+        <a href="./servicios/planes/intermedio.php">
           <img src="https://cdn-icons-png.flaticon.com/512/916/916771.png" alt="Impermeabilización" class="iconos">
           <p class="iconos-texto">Plan Intermedio</p>
         </a>
       </div>
       <div class="flex-item">
-        <a  href="./servicios/planes/avanzado.php">
+        <a href="./servicios/planes/avanzado.php">
           <img src="https://cdn-icons-png.flaticon.com/512/2451/2451655.png" alt="Pintura" class="iconos">
           <p class="iconos-texto">Plan Servicio Completo</p>
         </a>
