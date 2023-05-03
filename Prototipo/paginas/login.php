@@ -4,7 +4,7 @@
 session_start();
 
 if (isset($_SESSION['user_id'])) {
-    header('Location: /LoginFactura/index.php');
+    header('Location: /Prototipo/index.php');
 }
 
 require('../database/database.php');
@@ -28,7 +28,6 @@ if (!empty($_POST['Email']) && !empty($_POST['password'])) {
     } else {
         $message = '<span style="color: red; font-weight: bold; font-family: Poppins; display: block; margin-top: 30px; text-align: center;">Las credenciales no son correctas</span>';
     }
-
 }
 
 
@@ -45,10 +44,10 @@ if (!empty($_POST['Email']) && !empty($_POST['password'])) {
     <link rel="icon" href="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/footer.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -57,7 +56,7 @@ if (!empty($_POST['Email']) && !empty($_POST['password'])) {
     ?>
 
 
-    <?php if (!empty($message)): ?>
+    <?php if (!empty($message)) : ?>
         <p>
             <?= $message ?>
         </p>
@@ -66,8 +65,7 @@ if (!empty($_POST['Email']) && !empty($_POST['password'])) {
     <!--Resto del código de la página de inicio de sesión-->
 
     <div class='imagen'>
-        <img src="/Prototipo/imagenes/CondominoLogin.png" class="img-fluid" alt="Logo"
-            width="320" height="206.5"></img>
+        <img src="/Prototipo/imagenes/CondominoLogin.png" class="img-fluid" alt="Logo" width="320" height="206.5"></img>
     </div>
     <div class='texto'>
         CondoSmart, el futuro de los condominios
@@ -83,14 +81,12 @@ if (!empty($_POST['Email']) && !empty($_POST['password'])) {
                         <!--Botón de usuario-->
                         <div class="input-group flex-nowrap">
                             <span class="input-group-text" id="addon-wrapping">📧</span>
-                            <input type="email" class="form-control" name='Email' placeholder="Correo electrónico"
-                                aria-label="Username" aria-describedby="addon-wrapping" />
+                            <input type="email" class="form-control" name='Email' placeholder="Correo electrónico" aria-label="Username" aria-describedby="addon-wrapping" />
                         </div>
                         <!--Botón de contraseña-->
                         <div class="input-group flex-nowrap">
                             <span class="input-group-text" id="addon-wrapping2">🔑</span>
-                            <input type="password" name='password' class="form-control" placeholder="Contraseña"
-                                aria-label="password" aria-describedby="addon-wrapping" />
+                            <input type="password" name='password' class="form-control" placeholder="Contraseña" aria-label="password" aria-describedby="addon-wrapping" />
                         </div>
                         <div class="d-grid gap-2 mb-3">
                             <button class="btn btn-primary" type="submit">Iniciar sesión</button>
@@ -107,7 +103,8 @@ if (!empty($_POST['Email']) && !empty($_POST['password'])) {
     </form>
 
     </div>
-
+    <?PHP require('./footer/footer.php');
+    ?>
 </body>
 
 </html>

@@ -66,12 +66,16 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/registro.css">
+<link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/navbar.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <body>
     <?PHP require('../navbar/navbar.php'); ?>
     <div>
+        <br>
+        <br>
+        <br>
         <a href="/Prototipo/index.php">
 
             <img src="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png" alt="Logo"
@@ -154,12 +158,10 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <select class="form-select" name='Servicio' id="floatingSelect"
                                         aria-label="Floating label select example"
                                         defaultValue="Seleccione un Servicio">
-                                        <option value="">Seleccione un Servicio</option>
-                                        <option value="Internet + Telefonía 30 MB">Internet + Telefonía 30 MB</option>
-                                        <option value="Internet + Telefonía 50 MB">Internet + Telefonía 50 MB</option>
-                                        <option value="Internet + Telefonía 100MB">Internet + Telefonía 100MB</option>
-                                        <option value="Internet + Telefonía + izzitv 50MB">Internet + Telefonía + izzitv
-                                            50MB</option>
+                                        <option value="">Seleccione el tamaño de condominio</option>
+                                        <option value="Internet + Telefonía 30 MB">De 15 a 30 departamentos</option>
+                                        <option value="Internet + Telefonía 50 MB">De 30 a 50 departamentos</option>
+                                        <option value="Internet + Telefonía 100MB">50 o más departamentos</option>
                                     </select>
                                     <label htmlFor="floatingSelect">Servicio contratado o deseado</label>
                                 </div>
@@ -378,7 +380,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 
                                 <div class="card-footer">
                                     <span>¿Ya tienes una cuenta?</span> <a
-                                        href="http://localhost/LoginFactura/paginas/login.php">Inicie Sesión</a>
+                                        href="http://localhost/Prototipo/paginas/login.php">Inicie Sesión</a>
                                 </div>
                             </div>
                         </div>
@@ -389,6 +391,10 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 
         </div>
     </div>
+ <br>
+ <br>
+ <br>
 </body>
-
+<?PHP require('../footer/footer.php');
+?>
 </html>

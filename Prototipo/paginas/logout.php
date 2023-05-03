@@ -5,7 +5,7 @@
 
   session_destroy();
 
-  header('Location: /LoginFactura/index.php');
+  header('Location: /Prototipo/index.php');
 ?>
 
 
