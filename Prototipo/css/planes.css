@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+.Titulo {
+    margin-top: 130px;
+    font-size: 2.3rem;
+    /* tamaño de fuente inicial */
+    font-family: 'Nunito', sans-serif;
+    color: #3E54AC;
+    text-align: center;
+    font-weight: 900;
+    
+}
+
+.Descripcion {
+    background-color: #FFFF99; /* Fondo amarillo */
+    color: #000000; /* Letra negra */
+    font-weight: bold; /* Negritas */
+    text-align: center; /* Centrado */
+    padding: 15px; /* Espacio interno */
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+  }
+
+  .TextoTitulo {
+    border-bottom: 4px solid #0071c5;
+    padding-bottom: 20px;
+  }
+  
+ .cabecera{
+    border-bottom: 2px solid #0071c5; /* color azul rey */
+ }
+  
+  @media (max-width: 768px) {
+    .Descripcion {
+      font-size: 16px; /* Tamaño de letra menor en dispositivos móviles */
+    }
+  }
+
+  .titulo-servicios{
+    font-size: 2rem; /* tamaño de fuente inicial */
+    font-family: 'Nunito', sans-serif;
+    text-align: left;
+    font-weight: 700;
+    margin-top: -25px;
+  }
+
+  .lista{
+    font-size: 1.1rem; /* tamaño de fuente inicial */
+    font-family: 'Nunito', sans-serif;
+    text-align: left;
+    font-weight: 525;
+  }
+
+  .lista li {
+    margin-bottom: 7px;
+  }
+
+  .flex-inicio{
+    border-bottom: 4px solid #0071c5;
+    padding-bottom: 20px;
+  }
+
+  .flex-iconos{
+    border-bottom: 4px solid #0071c5;
+    padding-bottom: 10px;
+  }
+
+  .muestra-derecha{
+    margin-right: 150px;
+    align-content: center;
+  }
+
+  .muestra{
+    margin-left: 300px;
+    align-content: center;
+  }
+
+  .btn {
+    background-color: #146C94; /* Color azul claro */
+    color: #FFFFFF; /* Letras blancas */
+    border-radius: 25px; /* Borde redondeado */
+    transition: background-color 0.3s ease; /* Transición suave de color */
+    border: none; /* Quitamos el borde por defecto */
+    padding: 10px 20px; /* Ajustamos el padding */
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-left: 100px;
+    margin: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #1E90FF; /* Color de contraste al pasar el mouse */
+  }
+
+  .titulo-texto{
+    margin-left: 30px;
+    margin-right: 60px;
+  }
+  
+  .titulo-texto-derecha{
+    margin-left: 60px;
+}
+  
+  
+.iconos-texto{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #000000;
+    text-decoration: none !important;
+    border-bottom: none;
+  }
+  

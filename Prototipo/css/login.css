@@ -1,0 +1,103 @@
+.imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px; /* puedes ajustar el valor según la cantidad de espacio que desees */
+}
+
+.texto {
+  width: 320px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.5;
+  font-weight: 550;
+}
+
+.card-header {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  color: #333;
+  background-color: #fff;
+  font-weight: 550;
+}
+
+.form-control {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+@media (min-width: 992px) {
+  .row {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
+
+.btn-primary {
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  border-color: black;
+  border-radius: 15px;
+  padding: 10px;
+  width: 150px;
+  margin: auto;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary span {
+  background-color: #F5DEB3;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px;
+  color: black;
+}
+
+
+
+.input-group{
+  margin-top: 25px;
+  text-align: center; /* agregado para centrar el botón */
+  margin-bottom: 25px;
+}
+
+.btn-group{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+
+.card-footer{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+

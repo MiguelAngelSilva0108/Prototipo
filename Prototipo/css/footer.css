@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: #6C9BCF;
+    text-decoration: none;
+  }
+  
