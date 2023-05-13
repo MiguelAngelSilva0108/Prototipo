@@ -54,7 +54,7 @@
             <tr>
             </tr>
             <tr>
-              <th scope="row" class="align-middle text-center">Administración de Recursos Monetarios</th>
+              <th scope="row" class="align-middle text-center">1. Administración de Recursos Monetarios</th>
               <td class="align-middle text-center">Cada mes.</td>
               <td>Gestión y control de los recursos monetarios asociados con el mantenimiento y operación del condominio.
                 Esto implica la planificación y el seguimiento del presupuesto y la gestión de los pagos a proveedores.
@@ -62,7 +62,16 @@
                 la calidad de vida de los residentes y asegurar la sostenibilidad financiera a largo plazo del condominio.</td>
             </tr>
             <tr>
-              <th scope="row" class="align-middle text-center">Recaudación de cuotas de mantenimiento</th>
+              <th scope="row" class="align-middle text-center">2. Limpieza y lavado de áreas comunes</th>
+              <td class="align-middle text-center">Dos veces por semana</td>
+              <td>Limpieza de áreas comunes, esto incluye barrido, lavado y encerado de pisos.
+                Desinfección con cloro, limpieza de paredes y áreas comunes, tales como juegos infantiles, 
+                gimnasios, etc.
+                Se pondrán botes de basura en todas las áreas comunes.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="align-middle text-center">3. Recaudación de cuotas de mantenimiento</th>
               <td class="align-middle text-center">Cada mes.</td>
               <td>Proceso que implica la gestión y cobro de las cuotas de mantenimiento que deben pagar los residentes
                 de un condominio o comunidad. Este servicio se encarga de enviar recordatorios de pago,
@@ -72,28 +81,28 @@
                 operación del condominio.</td>
             </tr>
             <tr>
-              <th scope="row" class="align-middle text-center">Lavado y desinfección de tinacos</th>
-              <td class="align-middle text-center">5 tinacos, 1 vez c/u por cada 6 meses.</td>
+              <th scope="row" class="align-middle text-center">4. Lavado y desinfección de tinacos</th>
+              <td class="align-middle text-center">1 vez c/u por cada 6 meses.</td>
               <td>Se realizará la limpieza de tinacos, desinfección a través de hipoclorito y tallado manual.
                 Cuenta con un plomero experto y un ayudante </td>
             </tr>
             <tr>
-              <th scope="row" class="align-middle text-center">Lavado y desinfección de cisternas</th>
-              <td class="align-middle text-center">2 cisternas de 30 m3, 1 vez c/u por cada 6 meses </td>
+              <th scope="row" class="align-middle text-center">5. Lavado y desinfección de cisternas</th>
+              <td class="align-middle text-center">1 vez c/u por cada 6 meses </td>
               <td>Se realizará la limpieza de cisterna, desinfección a través de hipoclorito y tallado manual.
                 Cuenta con un plomero experto y un ayudante
               </td>
             </tr>
             <tr>
-              <th scope="row" class="align-middle text-center">Poda de árboles</th>
-              <td class="align-middle text-center">20 árboles de 5 a 10 m, una vez cada mes</td>
+              <th scope="row" class="align-middle text-center">6. Poda de árboles</th>
+              <td class="align-middle text-center">Una vez cada mes</td>
               <td>Todos los árboles requieren de cierto mantenimiento y es importante que sean tratados por manos expertas.
                 La poda es una actividad necesaria para mantener los árboles sanos y en perfecto estado.
                 De hecho, es una tarea fundamental en cuanto al mantenimiento de un jardín.</td>
             </tr>
 
             <tr>
-              <th scope="row" class="align-middle text-center">Poda de pasto</th>
+              <th scope="row" class="align-middle text-center">7. Poda de pasto</th>
               <td class="align-middle text-center">300 m2, una vez cada mes</td>
               <td>Para tener un pasto saludable, es importante cortarlo de forma periódica. Si no prestamos atención a esta tarea,
                 es fácil que nuestro jardín adquiera un aspecto un poco descuidado.
@@ -102,8 +111,8 @@
             </tr>
 
             <tr>
-              <th scope="row" class="align-middle text-center">Control de acceso y de salida</th>
-              <td class="align-middle text-center">24 horas</td>
+              <th scope="row" class="align-middle text-center">8. Control de acceso y de salida</th>
+              <td class="align-middle text-center">24 horas los 365 días del año</td>
               <td>El acceso a fraccionamientos o condominios determina la tranquilidad en tu comunidad. Es por eso que
                 Asignamos a vigilantes, para la tranquilidad de tu hogar
               </td>

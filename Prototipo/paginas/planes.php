@@ -55,7 +55,7 @@
                 <div class="flex-item">
                     <a href="/Prototipo/servicios/planes/avanzado.php">
                         <img src="https://cdn-icons-png.flaticon.com/512/2451/2451655.png" alt="Pintura" class="iconos">
-                        <p class="iconos-texto">Plan Servicio Completo</p>
+                        <p class="iconos-texto">Plan Premium</p>
                     </a>
                 </div>
             </div>
@@ -75,8 +75,7 @@
                                 <li>Limpieza de áreas comunes</li>
                                 <li>Limpieza y desinfección de tinacos y cisternas</li>
                                 <li>Jardinería</li>
-                                <li>Ideal para condominios de 15 a 30 departamentos</li>
-                                <li style="color: #05BFDB;">Todo por $54,400 al mes</li>
+                                <li>Limpieza de Albercas con costo extra</li>
                             </ul>
                         </div>
                     </div>
@@ -85,15 +84,15 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png" style="margin-right: 250px" alt="Mantenimiento industrial" class="muestra-derecha" height="150" width="150">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary">¡Quiero saber más!</button>
+            <a href="/Prototipo/servicios/planes/basico.php" class="btn btn-primary">¡Quiero saber más!</a>
         </div>
     </div>
-
+   
     <div class="container">
         <div class="flex-inicio">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <div class="text-md-start mb-3 mb-md-0 me-md-5">
-                    <img src="https://cdn-icons-png.flaticon.com/512/916/916771.png" tyle="margin-left: 250px" alt="Mantenimiento industrial" class="muestra" height="150" width="150">
+                    <img src="https://cdn-icons-png.flaticon.com/512/916/916771.png" alt="Mantenimiento industrial" class="muestra" height="150" width="150">
                 </div>
                 <div class="text-md-start mb-3 mb-md-0 me-md-5">
                     <div class="titulo-texto">
@@ -103,15 +102,15 @@
                                 <li>¡Todo lo que tiene el paquete básico!</li>
                                 <li>Estado de ingresos y gastos</li>
                                 <li>Limpieza de cristales del edificio</li>
-                                <li>Vigilancia en los estacionamientos</li>
-                                <li>Ideal para condominios de 30 a 50 departamentos</li>
-                                <li style="color: #05BFDB;">Todo por $101,000 al mes</li>
+                                <li>Vigilancia en los estacionamientos 24/7</li>
+                                <li>Mantenimiento de tanques de gas</li>
+                                <li>Limpieza de Albercas con costo extra</li>
                             </ul>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary">¡Quiero saber más!</button>
                 </div>
             </div>
+            <a href="/Prototipo/servicios/planes/intermedio.php" class="btn btn-primary">¡Quiero saber más!</a>
         </div>
     </div>
 
@@ -127,11 +126,9 @@
                             <li>¡Todo lo que tiene el paquete básico e intermedio!</li>
                                 <li>Impermeabilización</li>
                                 <li>Pintura Exterior e interior de áreas comunes</li>
-                                <li>Limpieza de Albercas</li>
                                 <li>Vigilancia Nocturna</li>
                                 <li>Cámaras de seguridad vigilando 24/7</li>
-                                <li>Ideal para condominios de 50 o más departamentos</li>
-                                <li style="color: #05BFDB;">Todo por $179,000 al mes</li>
+                                <li>Limpieza de Albercas con costo extra</li>
                             </ul>
                         </div>
                     </div>
@@ -140,7 +137,7 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/1027/1027251.png" style="margin-right: 250px" alt="Mantenimiento industrial" class="muestra-derecha" height="150" width="150">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary">¡Quiero saber más!</button>
+            <a href="/Prototipo/servicios/planes/avanzado.php" class="btn btn-primary">¡Quiero saber más!</a>
         </div>
     </div>
 </body>

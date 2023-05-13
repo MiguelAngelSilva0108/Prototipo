@@ -9,7 +9,7 @@
         <ul class="list-unstyled">
           <li><a href="/Prototipo/servicios/planes/basico.php">Plan básico</a></li>
           <li><a href="/Prototipo/servicios/planes/intermedio.php">Plan intermedio</a></li>
-          <li><a href="/Prototipo/servicios/planes/avanzado.php">Plan avanzado</a></li>
+          <li><a href="/Prototipo/servicios/planes/avanzado.php">Plan Premium</a></li>
           <li><a href="/Prototipo/paginas/servicios.php">Servicios unitarios</a></li>
         </ul>
       </div>

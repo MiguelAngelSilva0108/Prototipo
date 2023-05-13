@@ -12,7 +12,9 @@
   }
   
   
-
+  img:hover {
+    transform: scale(1.1); /* aumenta el tamaño de la imagen en un 10% al pasar el cursor sobre ella */
+  }
  
   
   .card-header {

@@ -85,84 +85,88 @@
     <div class="flex-container">
       <div class="flex-item">
         <a href="./servicios/unitarios/vigilancia.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
-          <p class="iconos-texto">Vigilancia 24/7</p>
-        </a>
-      </div>
-      <div class="flex-item">
-        <a href="./servicios/unitarios/impermeabilizacion.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
-          <p class="iconos-texto">Impermeabilización</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/217/217853.png" alt="Vigilancia" class="iconos">
+          <p class="iconos-texto">Administración y recolección de recursos monetarios</p>
         </a>
       </div>
       <div class="flex-item">
         <a href="./servicios/unitarios/pintura.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
-          <p class="iconos-texto">Pintura Interior y Exterior</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/2421/2421989.png" alt="albañil" class="iconos">
+          <p class="iconos-texto">Albañilería</p>
         </a>
       </div>
       <div class="flex-item">
-        <a href="./servicios/unitarios/albercas.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
-            class="iconos">
-          <p class="iconos-texto">Limpieza de Albercas</p>
+        <a href="./servicios/unitarios/vigilancia.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/36/36311.png" alt="Vigilancia" class="iconos">
+          <p class="iconos-texto">Cámaras de vigilancia</p>
         </a>
       </div>
+      <div class="flex-item">
+        <a href="./servicios/unitarios/vigilancia.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/2172/2172539.png" alt="Vigilancia" class="iconos">
+          <p class="iconos-texto">Comité de administración</p>
+        </a>
+      </div>
+      
+  
     </div>
   </div>
 
 <!--linea 2 de servicios -->
 <div class="container imagenes">
     <div class="flex-container">
-      <div class="flex-item">
-        <a href="./servicios/unitarios/vigilancia.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
-          <p class="iconos-texto">Vigilancia 24/7</p>
+
+    <div class="flex-item">
+        <a href="./servicios/unitarios/albercas.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/2636/2636843.png" alt="Descripción de la imagen"
+            class="iconos">
+          <p class="iconos-texto">Control de plagas</p>
         </a>
       </div>
+
+      <div class="flex-item">
+        <a href="./servicios/unitarios/impermeabilizacion.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/1983/1983275.png" alt="Electricista" class="iconos">
+          <p class="iconos-texto">Electricista</p>
+        </a>
+      </div>
+
+      <div class="flex-item">
+        <a href="./servicios/unitarios/impermeabilizacion.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/5605/5605882.png" alt="Impermeabilización" class="iconos">
+          <p class="iconos-texto">Gestión de asuntos de gobierno y legales</p>
+        </a>
+      </div>
+
       <div class="flex-item">
         <a href="./servicios/unitarios/impermeabilizacion.php">
           <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
           <p class="iconos-texto">Impermeabilización</p>
         </a>
       </div>
-      <div class="flex-item">
-        <a href="./servicios/unitarios/pintura.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
-          <p class="iconos-texto">Pintura Interior y Exterior</p>
-        </a>
-      </div>
-      <div class="flex-item">
-        <a href="./servicios/unitarios/albercas.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
-            class="iconos">
-          <p class="iconos-texto">Limpieza de Albercas</p>
-        </a>
-      </div>
+      
     </div>
   </div>
 
   <!--linea 3 de servicios -->
   <div class="container imagenes">
     <div class="flex-container">
-      <div class="flex-item">
-        <a href="./servicios/unitarios/vigilancia.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
-          <p class="iconos-texto">Vigilancia 24/7</p>
-        </a>
-      </div>
+
       <div class="flex-item">
         <a href="./servicios/unitarios/impermeabilizacion.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
-          <p class="iconos-texto">Impermeabilización</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/6080/6080340.png" alt="Impermeabilización" class="iconos">
+          <p class="iconos-texto">Lavado y desinfección de Cisternas</p>
         </a>
       </div>
+
       <div class="flex-item">
-        <a href="./servicios/unitarios/pintura.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
-          <p class="iconos-texto">Pintura Interior y Exterior</p>
+        <a href="./servicios/unitarios/albercas.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/3731/3731091.png" alt="Descripción de la imagen"
+            class="iconos">
+          <p class="iconos-texto">Lavado y desinfección de tinacos</p>
         </a>
       </div>
+
       <div class="flex-item">
         <a href="./servicios/unitarios/albercas.php">
           <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
@@ -170,35 +174,49 @@
           <p class="iconos-texto">Limpieza de Albercas</p>
         </a>
       </div>
+
+      <div class="flex-item">
+        <a href="./servicios/unitarios/pintura.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/2737/2737066.png" alt="Pintura" class="iconos">
+          <p class="iconos-texto">Limpieza de áreas comunes</p>
+        </a>
+      </div>
+
+      
+     
     </div>
   </div>
 
   <!--linea 4 de servicios -->
   <div class="container imagenes">
     <div class="flex-container">
+
+    <div class="flex-item">
+        <a href="./servicios/unitarios/albercas.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/6410/6410650.png" alt="Descripción de la imagen"
+            class="iconos">
+          <p class="iconos-texto">Limpieza de ventanales</p>
+        </a>
+      </div>
+
       <div class="flex-item">
         <a href="./servicios/unitarios/vigilancia.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
-          <p class="iconos-texto">Vigilancia 24/7</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/4635/4635359.png" alt="Vigilancia" class="iconos">
+          <p class="iconos-texto">Plomería</p>
         </a>
       </div>
+
       <div class="flex-item">
         <a href="./servicios/unitarios/impermeabilizacion.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
-          <p class="iconos-texto">Impermeabilización</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/2174/2174132.png" alt="Impermeabilización" class="iconos">
+          <p class="iconos-texto">Poda y adorno de arboles</p>
         </a>
       </div>
+
       <div class="flex-item">
-        <a href="./servicios/unitarios/pintura.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
-          <p class="iconos-texto">Pintura Interior y Exterior</p>
-        </a>
-      </div>
-      <div class="flex-item">
-        <a href="./servicios/unitarios/albercas.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
-            class="iconos">
-          <p class="iconos-texto">Limpieza de Albercas</p>
+        <a href="./servicios/unitarios/vigilancia.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/7105/7105088.png" alt="Vigilancia" class="iconos">
+          <p class="iconos-texto">Poda de pasto</p>
         </a>
       </div>
     </div>
@@ -207,31 +225,36 @@
   <!--linea 5 de servicios -->
   <div class="container imagenes">
     <div class="flex-container">
-      <div class="flex-item">
-        <a href="./servicios/unitarios/vigilancia.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/36/36296.png" alt="Vigilancia" class="iconos">
-          <p class="iconos-texto">Vigilancia 24/7</p>
-        </a>
-      </div>
-      <div class="flex-item">
-        <a href="./servicios/unitarios/impermeabilizacion.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización" class="iconos">
-          <p class="iconos-texto">Impermeabilización</p>
-        </a>
-      </div>
-      <div class="flex-item">
+     
+    <div class="flex-item">
         <a href="./servicios/unitarios/pintura.php">
           <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
           <p class="iconos-texto">Pintura Interior y Exterior</p>
         </a>
       </div>
+
       <div class="flex-item">
         <a href="./servicios/unitarios/albercas.php">
-          <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
+          <img src="https://cdn-icons-png.flaticon.com/512/2457/2457981.png" alt="Descripción de la imagen"
             class="iconos">
-          <p class="iconos-texto">Limpieza de Albercas</p>
+          <p class="iconos-texto">Puertas automáticas</p>
         </a>
       </div>
+
+      <div class="flex-item">
+        <a href="./servicios/unitarios/pintura.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/16/16386.png" alt="Pintura" class="iconos">
+          <p class="iconos-texto">Pulido y limpieza de pisos</p>
+        </a>
+      </div>
+
+      <div class="flex-item">
+        <a href="./servicios/unitarios/pintura.php">
+          <img src="https://cdn-icons-png.flaticon.com/512/5290/5290741.png" alt="Pintura" class="iconos">
+          <p class="iconos-texto">Recudación cuotas de mantenimiento</p>
+        </a>
+      </div>
+      
     </div>
   </div>
 

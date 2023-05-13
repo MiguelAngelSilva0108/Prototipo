@@ -46,7 +46,7 @@
   .lista{
     font-size: 1.1rem; /* tamaño de fuente inicial */
     font-family: 'Nunito', sans-serif;
-    text-align: left;
+    text-align: justify;
     font-weight: 525;
   }
 
@@ -66,27 +66,37 @@
 
   .muestra-derecha{
     margin-right: 150px;
-    align-content: center;
-  }
+    display: block;
+    margin: 0 auto;
+}
 
-  .muestra{
+.muestra{
+    margin-left: 200px;
+    display: block;
+    margin: 0 auto;
     margin-left: 300px;
     align-content: center;
-  }
+}
+
+
 
   .btn {
-    background-color: #146C94; /* Color azul claro */
-    color: #FFFFFF; /* Letras blancas */
-    border-radius: 25px; /* Borde redondeado */
-    transition: background-color 0.3s ease; /* Transición suave de color */
-    border: none; /* Quitamos el borde por defecto */
-    padding: 10px 20px; /* Ajustamos el padding */
+    background-color: #146C94;
+    color: #FFFFFF;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    border: none;
+    padding: 10px 20px;
     font-family: 'Nunito', sans-serif;
     font-size: 1.05rem;
     text-align: center;
-    margin-left: 100px;
-    margin: 10px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 35%;
   }
+  
   
   .btn:hover {
     background-color: #1E90FF; /* Color de contraste al pasar el mouse */
@@ -110,4 +120,9 @@
     text-decoration: none !important;
     border-bottom: none;
   }
+
+  img:hover {
+    transform: scale(1.2); /* aumenta el tamaño de la imagen en un 10% al pasar el cursor sobre ella */
+  }
   
+
