@@ -10,6 +10,12 @@
   color: #ffffff;
 }
 
+.navbar-collapse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar-nav li a {
   font-size: 1.2rem;
 }

@@ -34,111 +34,188 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="flex-inicio">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="text-md-start mb-3 mb-md-0 me-md-5">
-                    <div class="titulo-texto-derecha">
-                        <p class="titulo-servicios">Vigilancia 24/7</p>
-                        <div class="lista">
-                            <ul>
-                                <li>Control de acceso y salida en el condominio</li>
-                                <li>Vigilancia en los estacionamientos de la unidad</li>
-                                <li>Vigilancia Nocturna</li>
-                                <li>Instalación de cámaras de seguridad en todo el condominio. Funcionan 24/7, revisa
-                                    los
-                                    videos cuando quieras</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1320/1320449.png" alt="Mantenimiento industrial"
-                        class="muestra-derecha" height="150" width="150">
-                </div>
+    <!--linea 1 de servicios -->
+    <div class="container imagenes">
+        <div class="flex-container">
+            <div class="flex-item">
+                <a href="./servicios/unitarios/explicacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/217/217853.png" alt="Administración y recolección de recursos monetarios" class="iconos">
+                    <p class="iconos-texto">Administración y recolección de recursos monetarios</p>
+                </a>
             </div>
-            <button type="button" class="btn btn-primary">¡Quiero saber más!</button>
+            <div class="flex-item">
+                <a href="./servicios/unitarios/explicacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2421/2421989.png" alt="Albañilería" class="iconos">
+                    <p class="iconos-texto">Albañilería</p>
+                </a>
+            </div>
+            <div class="flex-item">
+                <a href="./servicios/unitarios/explicacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/36/36311.png" alt="Cámaras de vigilancia" class="iconos">
+                    <p class="iconos-texto">Cámaras de vigilancia</p>
+                </a>
+            </div>
+            <div class="flex-item">
+                <a href="./servicios/unitarios/explicacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2172/2172539.png" alt="Comité de administración" class="iconos">
+                    <p class="iconos-texto">Comité de administración</p>
+                </a>
+            </div>
+
         </div>
     </div>
 
-    <div class="container">
-        <div class="flex-inicio">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="text-md-start mb-3 mb-md-0 me-md-5">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2551/2551210.png" alt="Mantenimiento industrial"
-                        class="muestra" height="150" width="150">
-                </div>
-                <div class="text-md-start mb-3 mb-md-0 me-md-5">
-                    <div class="titulo-texto">
-                        <p class="titulo-servicios">Impermeabilización</p>
-                        <div class="lista">
-                            <ul>
-                                <li>La impermeabilización se realiza con membrana liquida, usamos la mejor tecnología
-                                    para tu satisfacción</li>
-                                <li>Usamos Materiales de la más alta calidad</li>
-                                <li>¡Secado rápido!</li>
-                                <li>Duración de 10 años</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-primary">¡Quiero saber más!</button>
-                </div>
+    <!--linea 2 de servicios -->
+    <div class="container imagenes">
+        <div class="flex-container">
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/albercas.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2636/2636843.png" alt="Descripción de la imagen"
+                        class="iconos">
+                    <p class="iconos-texto">Control de plagas</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/impermeabilizacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1983/1983275.png" alt="Electricista"
+                        class="iconos">
+                    <p class="iconos-texto">Electricista</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/impermeabilizacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5605/5605882.png" alt="Impermeabilización"
+                        class="iconos">
+                    <p class="iconos-texto">Gestión de asuntos de gobierno y legales</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/impermeabilizacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/129/129817.png" alt="Impermeabilización"
+                        class="iconos">
+                    <p class="iconos-texto">Impermeabilización</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!--linea 3 de servicios -->
+    <div class="container imagenes">
+        <div class="flex-container">
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/impermeabilizacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6080/6080340.png" alt="Impermeabilización"
+                        class="iconos">
+                    <p class="iconos-texto">Lavado y desinfección de Cisternas</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/albercas.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3731/3731091.png" alt="Descripción de la imagen"
+                        class="iconos">
+                    <p class="iconos-texto">Lavado y desinfección de tinacos</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/albercas.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6568/6568508.png" alt="Descripción de la imagen"
+                        class="iconos">
+                    <p class="iconos-texto">Limpieza de Albercas</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/pintura.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2737/2737066.png" alt="Pintura" class="iconos">
+                    <p class="iconos-texto">Limpieza de áreas comunes</p>
+                </a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--linea 4 de servicios -->
+    <div class="container imagenes">
+        <div class="flex-container">
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/albercas.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6410/6410650.png" alt="Descripción de la imagen"
+                        class="iconos">
+                    <p class="iconos-texto">Limpieza de ventanales</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/vigilancia.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4635/4635359.png" alt="Vigilancia" class="iconos">
+                    <p class="iconos-texto">Plomería</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/impermeabilizacion.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2174/2174132.png" alt="Impermeabilización"
+                        class="iconos">
+                    <p class="iconos-texto">Poda y adorno de arboles</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/vigilancia.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7105/7105088.png" alt="Vigilancia" class="iconos">
+                    <p class="iconos-texto">Poda de pasto</p>
+                </a>
             </div>
         </div>
     </div>
 
+    <!--linea 5 de servicios -->
+    <div class="container imagenes">
+        <div class="flex-container">
 
-    <div class="container">
-        <div class="flex-inicio">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="text-md-start mb-3 mb-md-0 me-md-5">
-                    <div class="titulo-texto-derecha">
-                        <p class="titulo-servicios">Limpieza de Albercas</p>
-                        <div class="lista">
-                            <ul>
-                                <li>Tu alberca limpia y libre de microorganismos</li>
-                                <li>Lavado completo de tu alberca</li>
-                                <li>Usamos productos de calidad. Ten la seguridad que quedará como nueva</li>
-                                <li>Seguimos las normas en todo momento.Tu seguridad es nuestra prioridad</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1027/1027251.png" alt="Mantenimiento industrial"
-                        class="muestra-derecha" height="150" width="150">
-                </div>
+            <div class="flex-item">
+                <a href="./servicios/unitarios/pintura.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1276/1276892.png" alt="Pintura" class="iconos">
+                    <p class="iconos-texto">Pintura Interior y Exterior</p>
+                </a>
             </div>
-            <button type="button" class="btn btn-primary">¡Quiero saber más!</button>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/albercas.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2457/2457981.png" alt="Descripción de la imagen"
+                        class="iconos">
+                    <p class="iconos-texto">Puertas automáticas</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/pintura.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/16/16386.png" alt="Pintura" class="iconos">
+                    <p class="iconos-texto">Pulido y limpieza de pisos</p>
+                </a>
+            </div>
+
+            <div class="flex-item">
+                <a href="./servicios/unitarios/pintura.php">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5290/5290741.png" alt="Pintura" class="iconos">
+                    <p class="iconos-texto">Recudación cuotas de mantenimiento</p>
+                </a>
+            </div>
+
         </div>
     </div>
 
-    <div class="container">
-        <div class="flex-inicio">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="text-md-start mb-3 mb-md-0 me-md-5">
-                    <img src="https://cdn-icons-png.flaticon.com/512/46/46557.png" alt="Mantenimiento industrial"
-                        class="muestra" height="150" width="150">
-                </div>
-                <div class="text-md-start mb-3 mb-md-0 me-md-5">
-                    <div class="titulo-texto">
-                        <p class="titulo-servicios">Pintura en Interior e interior</p>
-                        <div class="lista">
-                            <ul>
-                                <li>Aplicamos pintura en las áreas comunes, tanto en interiores como exteriores</li>
-                                <li>La pintura mantiene su calidad por 15 años</li>
-                                <li>¡Secado rápido!</li>
-                                <li>Contamos con pintura Antigraffiti</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn btn-primary">¡Quiero saber más!</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 <?PHP require('../footer/footer.php');
