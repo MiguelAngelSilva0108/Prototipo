@@ -170,7 +170,6 @@
       $cotizacionUrl = '../../paginas/login.php';
     }
     ?>
-
     <button type="button" class="btn btn-primary"
       onclick="<?php echo "window.location.href='" . $cotizacionUrl . "'"; ?>">¡Quiero una cotización!</button>
 

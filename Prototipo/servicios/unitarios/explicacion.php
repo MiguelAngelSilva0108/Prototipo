@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plan Premium</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="icon" href="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png"
     type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
@@ -27,93 +29,90 @@
 
 <body>
 
-
-
-
   <?php
   if (isset($_GET['servicio'])) {
     $servicio = $_GET['servicio'];
     switch ($servicio) {
       case 'administracion':
         $titulo = 'Administración y recolección de recursos monetarios';
-        $descripcion = 'Descripcion administracion';
+        $descripcion = 'Gestión y control de los  recursos monetarios asociados con el mantenimiento y operación del condominio.';
         $imagen = 'https://cdn-icons-png.flaticon.com/512/217/217853.png';
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = 'Planificación de presupuesto';
+        $punto2 = 'Seguimiento de presupuesto';
+        $punto3 = 'Gestión de pagos a proveedores';
+        $punto4 = 'Administración efectiva de los recursos';
+        $punto5 = 'Asegura la sostenibilidad del condominio';
         break;
       case 'albanileria':
         $titulo = 'Albañilería';
         $descripcion = 'Ofrecemos servicios de albañilería de alta calidad a precios competitivos. Contáctanos para más información.';
         $imagen = 'https://cdn-icons-png.flaticon.com/512/2421/2421989.png';
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = 'Reparación y mantenimiento de estructura';
+        $punto2 = 'Reparación y mantenimiento de paredes';
+        $punto3 = ' Instalación y reparación de pisos y revestimientos';
+        $punto4 = 'Construcción y reparación de muros';
+        $punto5 = 'Construcción y reparación de columnas';
         break;
       case 'camaras':
         $titulo = 'Cámaras de vigilancia';
         $descripcion = 'Instalamos cámaras de vigilancia de alta calidad para garantizar la seguridad de tus espacios. Contáctanos para más información.';
         $imagen = 'https://cdn-icons-png.flaticon.com/512/36/36311.png';
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = ' Instalación de cámaras de seguridad para el condominio';
+        $punto2 = 'Monitoreo de cámaras de seguridad para el condominio';
+        $punto3 = 'Mantenimiento de sistemas de videovigilancia';
+        $punto4 = 'Reparación de sistemas de videovigilancia';
+        $punto5 = 'Mantenimiento de las cámaras';
         break;
       case 'comite':
         $titulo = 'Comité de administración';
         $descripcion = 'Comité de administración';
         $imagen = 'https://cdn-icons-png.flaticon.com/512/4420/4420377.png';
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = 'Organización y coordinación de reuniones del comité';
+        $punto2 = 'Comunicación comunitaria';
+        $punto3 = 'Organización de eventos y actividades';
+        $punto4 = 'Servicio de mediación y resolución de conflictos';
+        $punto5 = ' Participación comunitaria';
         break;
 
       case "plagas":
         $titulo = "Control de plagas";
-        $descripcion = 'Instalamos cámaras de vigilancia de alta calidad para garantizar la seguridad de tus espacios. Contáctanos para más información.';
+        $descripcion = 'Control y exterminio de plagas como insectos, roedores u otros animales no deseados en el condominio.';
         $imagen = "https://cdn-icons-png.flaticon.com/512/2636/2636843.png";
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = 'Prevención y asesoramiento para evitar la proliferación de plagas';
+        $punto2 = 'Inspección y evaluación';
+        $punto3 = 'Control de insectos';
+        $punto4 = 'Control de roedores';
+        $punto5 = 'Control de plagas de jardín';
         break;
       case "electricista":
         $titulo = "Electricista";
         $descripcion = 'Instalamos cámaras de vigilancia de alta calidad para garantizar la seguridad de tus espacios. Contáctanos para más información.';
         $imagen = "https://cdn-icons-png.flaticon.com/512/1983/1983275.png";
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = 'Instalación eléctrica en áreas comunes';
+        $punto2 = 'Mantenimiento eléctrico en áreas comunes';
+        $punto3 = 'Reparación de fallas eléctricas y cortocircuito';
+        $punto4 = 'Solución de problemas eléctricos';
+        $punto5 = 'Asesoramiento y recomendaciones para promover el ahorro energético';
         break;
       case "gobierno":
         $titulo = "Gestión de asuntos de gobierno y legales";
-        $descripcion = 'Instalamos cámaras de vigilancia de alta calidad para garantizar la seguridad de tus espacios. Contáctanos para más información.';
+        $descripcion = 'Gestión de todos los asuntos legales y regulatorios relacionados con la administración y operación de la comunidad.';
         $imagen = "https://cdn-icons-png.flaticon.com/512/5605/5605882.png";
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = 'Cumplimiento de las leyes';
+        $punto2 = 'Cumplimiento de regulaciones locales';
+        $punto3 = 'Cumplimiento de regulaciones estatales';
+        $punto4 = 'Gestión efectiva de los asuntos legales y gubernamentales';
+        $punto5 = 'Garantia de la protección de los intereses y derechos';
         break;
       case "impermeabilizacion":
         $titulo = "Impermeabilización";
-        $descripcion = 'Instalamos cámaras de vigilancia de alta calidad para garantizar la seguridad de tus espacios. Contáctanos para más información.';
+        $descripcion = 'Si te gustaría proteger tu inmueble frente a las diversas condiciones meteorológicas, la impermeabilización es la alternativa perfecta.';
         $imagen = "https://cdn-icons-png.flaticon.com/512/129/129817.png";
-        $punto1 = 'Hola';
-        $punto2 = 'Hola';
-        $punto3 = 'Hola';
-        $punto4 = 'Hola';
-        $punto5 = 'Hola';
+        $punto1 = 'Sellado de techos del condominio';
+        $punto2 = 'Sellado de terrazas del condominio';
+        $punto3 = ' Servicio de reparación de filtraciones';
+        $punto4 = 'Servicio de reparación de humedades';
+        $punto5 = ' Impermeabilización del condominio';
         break;
       case "cisternas":
         $titulo = "Lavado y desinfección de Cisternas";
@@ -190,26 +189,28 @@
       case "pintura":
         $titulo = "Poda de pasto";
         $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
-        $descripcion = "Realizamos poda de pasto para mantener los jardines y áreas verdes en excelentes condiciones.";
-        $punto1 = "Contamos con maquinaria especializada para realizar poda de pasto de manera rápida y eficiente.";
-        $punto2 = "Realizamos desbroce de maleza y recorte de bordes.";
-        $punto3 = "Ofrecemos servicio de mantenimiento de jardines y áreas verdes.";
+        $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu fachada.";
+        $punto1 = "Pintura y repintado de áreas comunes";
+        $punto2 = "Pintura y repintado en fachas del condominio";
+        $punto3 = "Restauración y reparación de superficies pintadas";
+        $punto4 = "Pintura a herrería";
+        $punto5 = "Mantenimiento a pintura de herrería";
         break;
       case "puertas":
-        $titulo = "Poda de pasto";
+        $titulo = "Puertas";
         $imagen = "https://cdn-icons-png.flaticon.com/512/2457/2457981.png";
-        $descripcion = "Realizamos poda de pasto para mantener los jardines y áreas verdes en excelentes condiciones.";
-        $punto1 = "Contamos con maquinaria especializada para realizar poda de pasto de manera rápida y eficiente.";
-        $punto2 = "Realizamos desbroce de maleza y recorte de bordes.";
-        $punto3 = "Ofrecemos servicio de mantenimiento de jardines y áreas verdes.";
+        $descripcion = "Cuidado de las puertas del condominio al mejor precio";
+        $punto1 = " Instalación de puertas de acceso al condominio";
+        $punto2 = "Mantenimiento de puertas de acceso al condominio";
+        $punto3 = "Reparación de las puerta";
         break;
       case "pulido":
-        $titulo = "Poda de pasto";
+        $titulo = "Pulido de Pisos";
         $imagen = "https://cdn-icons-png.flaticon.com/512/16/16386.png";
-        $descripcion = "Realizamos poda de pasto para mantener los jardines y áreas verdes en excelentes condiciones.";
-        $punto1 = "Contamos con maquinaria especializada para realizar poda de pasto de manera rápida y eficiente.";
-        $punto2 = "Realizamos desbroce de maleza y recorte de bordes.";
-        $punto3 = "Ofrecemos servicio de mantenimiento de jardines y áreas verdes.";
+        $descripcion = "Para que tú condominios siempre luzcan presentables está es una muy buena opción, con nuestro equipo especializado verá buenos resultados.";
+        $punto1 = "Pulido de pisos de áreas comunes";
+        $punto2 = "Abrillantado de pisos de áreas comunes";
+        $punto3 = "Mantenimiento de superficies pulidas como mármol o granito";
         break;
       case "cuotas":
         $titulo = "Poda de pasto";
@@ -228,6 +229,8 @@
     $descripcion = 'Lo siento, el servicio que estás buscando no está disponible en este momento.';
   }
   ?>
+
+
   <div class="container">
     <div class="TextoTitulo">
       <p class="Titulo">
@@ -244,49 +247,116 @@
     <div class="flex-container">
       <div class="list-container">
         <ul>
-          <li>
-            <p>
-              <?php echo $punto1; ?>
-            </p>
-          </li>
-          <li>
-            <p>
-              <?php echo $punto2; ?>
-            </p>
-          </li>
-          <li>
-            <p>
-              <?php echo $punto3; ?>
-            </p>
-          </li>
-          <li>
-            <p>
-              <?php echo $punto4; ?>
-            </p>
-          </li>
-          <li>
-            <p>
-              <?php echo $punto5; ?>
-            </p>
-          </li>
+          <?php for ($i = 1; $i <= 10; $i++): ?>
+            <?php $punto = 'punto' . $i; ?>
+            <?php if (isset($$punto)): ?>
+              <li>
+                <p>
+                  <?php echo $$punto; ?>
+                </p>
+              </li>
+            <?php endif; ?>
+          <?php endfor; ?>
         </ul>
       </div>
     </div>
   </div>
 
+  <div class="contenedor">
+    <article>
+      <button id="btn-abrir-popup" class="btn btn-primary btn-abrir-popup">Abrir Ventana Emergente</button>
+    </article>
+    <div class="overlay" id="overlay">
+      <div class="popup container" id="popup">
+        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+        <h3>Agenda una cita completamente gratis</h3>
+        <h4>Nosotros te llamamos, estamos a tu servicio</h4>
+        <form action="">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" name="Nombres" class="form-control" id="floatingInput" placeholder="name@example.com"
+                  required>
+                <label for="floatingInput">Nombre Completo</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" name="Celular" class="form-control" id="floatingInput"
+                  placeholder="name@example.com">
+                <label for="floatingInput">Teléfono Celular</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" name="CP" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Código Postal</label>
+              </div>
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col-md">
+              <label for="fecha">Fecha de llamada:</label>
+              <input type="date" id="fecha" class="form-control">
+            </div>
+            <div class="col-md">
+              <label for="fecha">Hora de llamada:</label>
+              <select name="Hora" class="form-select" id="floatingSelect" aria-label="Default select example">
+                <option selected>Selecciona una hora</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="09:30">09:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="13:30">01:30 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="14:30">02:30 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="15:30">03:30 PM</option>
+                <option value="16:00">04:00 PM</option>
+                <option value="16:30">04:30 PM</option>
+                <option value="17:00">05:00 PM</option>
+                <option value="17:30">05:30 PM</option>
+                <option value="18:00">06:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">¡Quiero una cita!</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    const fechaInput = document.getElementById('fecha');
+    const today = new Date();
+    today.setDate(today.getDate() + 1); // Suma 1 día al día actual
+
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    const minDate = `${year}-${month}-${day}`;
+    fechaInput.min = minDate;
+  </script>
+
+
+  <script src="popup.js"></script>
 
 
 
 
-  <?php
-  if (!empty($user)) {
-    $cotizacionUrl = 'cotizacion.php';
-  } else {
-    $cotizacionUrl = '../../paginas/login.php';
-  }
-  ?>
-  <button type="button" class="btn btn-primary"
-    onclick="<?php echo "window.location.href='" . $cotizacionUrl . "'"; ?>">¡Quiero una cita!</button>
 
   <br>
   <br>
