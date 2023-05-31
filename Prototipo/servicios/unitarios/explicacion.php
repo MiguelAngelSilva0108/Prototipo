@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plan Premium</title>
+  <title>Servicios Unitarios</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="icon" href="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png"
@@ -113,6 +113,7 @@
         $punto3 = ' Servicio de reparación de filtraciones';
         $punto4 = 'Servicio de reparación de humedades';
         $punto5 = ' Impermeabilización del condominio';
+        $precio = 151.25;
         break;
       case "cisternas":
         $titulo = "Lavado y desinfección de Cisternas";
@@ -184,20 +185,22 @@
         $punto1 = "Contamos con maquinaria especializada para realizar poda de pasto de manera rápida y eficiente.";
         $punto2 = "Realizamos desbroce de maleza y recorte de bordes.";
         $punto3 = "Ofrecemos servicio de mantenimiento de jardines y áreas verdes.";
+        $precio = 82.99;
         break;
 
       case "pintura":
-        $titulo = "Poda de pasto";
+        $titulo = "Pintura interior y exterior";
         $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
         $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu fachada.";
         $punto1 = "Pintura y repintado de áreas comunes";
         $punto2 = "Pintura y repintado en fachas del condominio";
         $punto3 = "Restauración y reparación de superficies pintadas";
         $punto4 = "Pintura a herrería";
-        $punto5 = "Mantenimiento a pintura de herrería";
+        $punto5 = "Pintura antigrafitti";
+        $precio = 125.35;
         break;
       case "puertas":
-        $titulo = "Puertas";
+        $titulo = "Puertas automáticas";
         $imagen = "https://cdn-icons-png.flaticon.com/512/2457/2457981.png";
         $descripcion = "Cuidado de las puertas del condominio al mejor precio";
         $punto1 = " Instalación de puertas de acceso al condominio";
@@ -211,14 +214,13 @@
         $punto1 = "Pulido de pisos de áreas comunes";
         $punto2 = "Abrillantado de pisos de áreas comunes";
         $punto3 = "Mantenimiento de superficies pulidas como mármol o granito";
+        $precio = 112.75;
         break;
       case "cuotas":
-        $titulo = "Poda de pasto";
+        $titulo = "Recolección de Cuotas";
         $imagen = "https://cdn-icons-png.flaticon.com/512/2871/2871729.png";
-        $descripcion = "Realizamos poda de pasto para mantener los jardines y áreas verdes en excelentes condiciones.";
-        $punto1 = "Contamos con maquinaria especializada para realizar poda de pasto de manera rápida y eficiente.";
-        $punto2 = "Realizamos desbroce de maleza y recorte de bordes.";
-        $punto3 = "Ofrecemos servicio de mantenimiento de jardines y áreas verdes.";
+        $descripcion = "Recolección de efectivo en la unidad";
+        $punto1 = "Pagos de cuotas de mantenimiento mediante transferencia";
         break;
       default:
         $titulo = 'Servicio no encontrado';
@@ -262,94 +264,131 @@
     </div>
   </div>
 
-  <div class="contenedor">
-    <article>
-      <button id="btn-abrir-popup" class="btn btn-primary btn-abrir-popup">Abrir Ventana Emergente</button>
-    </article>
-    <div class="overlay" id="overlay">
-      <div class="popup container" id="popup">
-        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-        <h3>Agenda una cita completamente gratis</h3>
-        <h4>Nosotros te llamamos, estamos a tu servicio</h4>
-        <form action="">
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input type="text" name="Nombres" class="form-control" id="floatingInput" placeholder="name@example.com"
-                  required>
-                <label for="floatingInput">Nombre Completo</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input type="text" name="Celular" class="form-control" id="floatingInput"
-                  placeholder="name@example.com">
-                <label for="floatingInput">Teléfono Celular</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input type="text" name="CP" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Código Postal</label>
-              </div>
-            </div>
-          </div>
-          <div class="row g-2">
-            <div class="col-md">
-              <label for="fecha">Fecha de llamada:</label>
-              <input type="date" id="fecha" class="form-control">
-            </div>
-            <div class="col-md">
-              <label for="fecha">Hora de llamada:</label>
-              <select name="Hora" class="form-select" id="floatingSelect" aria-label="Default select example">
-                <option selected>Selecciona una hora</option>
-                <option value="09:00">09:00 AM</option>
-                <option value="09:30">09:30 AM</option>
-                <option value="10:00">10:00 AM</option>
-                <option value="10:30">10:30 AM</option>
-                <option value="11:00">11:00 AM</option>
-                <option value="11:30">11:30 AM</option>
-                <option value="12:00">12:00 PM</option>
-                <option value="12:30">12:30 PM</option>
-                <option value="13:00">01:00 PM</option>
-                <option value="13:30">01:30 PM</option>
-                <option value="14:00">02:00 PM</option>
-                <option value="14:30">02:30 PM</option>
-                <option value="15:00">03:00 PM</option>
-                <option value="15:30">03:30 PM</option>
-                <option value="16:00">04:00 PM</option>
-                <option value="16:30">04:30 PM</option>
-                <option value="17:00">05:00 PM</option>
-                <option value="17:30">05:30 PM</option>
-                <option value="18:00">06:00 PM</option>
-              </select>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">¡Quiero una cita!</button>
-        </form>
-      </div>
 
-    </div>
-  </div>
+  <?php
+
+  if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'pasto' || $servicio == 'pulido') {
+    $codigo_html = '<div class="container">
+    <h2 class="titulo2">Cotización Preliminar</h2>
+    <form id="cotizacionForm">
+        <div class="form-group">
+            <label for="m2" class="texto-grosor">m<sup>2</sup> aproximados de trabajo:</label>
+            <input type="number" class="form-control" id="m2" placeholder="Ingrese los m2">
+        </div>
+        <div id="resultado" class="mt-4"></div>
+        <button type="submit" class="btn btn-secondary cotizar">Cotización</button>
+    </form>
+</div>';
+    // Imprimir el código HTML generado
+    echo $codigo_html;
+  }
+  ?>
+
   <script>
-    const fechaInput = document.getElementById('fecha');
-    const today = new Date();
-    today.setDate(today.getDate() + 1); // Suma 1 día al día actual
-
-    const year = today.getFullYear();
-    const month = (today.getMonth() + 1).toString().padStart(2, '0');
-    const day = today.getDate().toString().padStart(2, '0');
-    const minDate = `${year}-${month}-${day}`;
-    fechaInput.min = minDate;
+    $(document).ready(function () {
+      $('#cotizacionForm').submit(function (e) {
+        e.preventDefault();
+        var m2 = $('#m2').val();
+        var precio = <?php echo $precio; ?>;
+        var costo = m2 * precio;
+        $('#resultado').html('<span class="costo">El costo preliminar sería de $' + costo.toFixed(2) + '</span>');
+      });
+    });
   </script>
+
+
+  <div class="form-no-calculo">
+    <div class="contenedor">
+      <article>
+        <button id="btn-abrir-popup" class="btn btn-primary btn-abrir-popup">Quiero agendar una cita gratuita</button>
+      </article>
+      <div class="overlay" id="overlay">
+        <div class="popup container" id="popup">
+          <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>Agenda una cita completamente gratis</h3>
+          <h4>Nosotros te llamamos, estamos a tu servicio</h4>
+          <form action="">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" name="Nombres" class="form-control" id="floatingInput"
+                    placeholder="name@example.com" required>
+                  <label for="floatingInput">Nombre Completo</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" required>
+                  <label for="floatingInputEmail">Email address</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" name="Celular" class="form-control" id="floatingInputCelular"
+                    placeholder="name@example.com">
+                  <label for="floatingInputCelular">Teléfono Celular</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" name="CP" class="form-control" id="floatingInputCP" placeholder="name@example.com">
+                  <label for="floatingInputCP">Código Postal</label>
+                </div>
+              </div>
+            </div>
+            <div class="row g-2">
+              <div class="col-md">
+                <label for="fecha">Fecha de llamada:</label>
+                <input type="date" id="fecha" class="form-control">
+              </div>
+              <div class="col-md">
+                <label for="hora">Hora de llamada:</label>
+                <select name="Hora" class="form-select" id="hora" aria-label="Default select example">
+                  <option selected>Selecciona una hora</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="09:30">09:30 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="10:30">10:30 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="11:30">11:30 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="13:30">01:30 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="14:30">02:30 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="15:30">03:30 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="16:30">04:30 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                  <option value="17:30">05:30 PM</option>
+                  <option value="18:00">06:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">¡Quiero una cita!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const fechaInput = document.getElementById('fecha');
+      const today = new Date();
+      today.setDate(today.getDate() + 1); // Suma 1 día al día actual
+
+      const year = today.getFullYear();
+      const month = (today.getMonth() + 1).toString().padStart(2, '0');
+      const day = today.getDate().toString().padStart(2, '0');
+      const minDate = `${year}-${month}-${day}`;
+      fechaInput.min = minDate;
+    </script>
+
+  </div>
+
+
 
 
   <script src="popup.js"></script>
