@@ -108,30 +108,28 @@
         $titulo = "Impermeabilización";
         $descripcion = 'Si te gustaría proteger tu inmueble frente a las diversas condiciones meteorológicas, la impermeabilización es la alternativa perfecta.';
         $imagen = "https://cdn-icons-png.flaticon.com/512/129/129817.png";
-        $punto1 = 'Sellado de techos del condominio';
-        $punto2 = 'Sellado de terrazas del condominio';
+        $punto1 = 'Impermeabilización de techos del condominio (Caucho)';
+        $punto2 = 'Impermeabilización de techos del condominio (Terracota)';
         $punto3 = ' Servicio de reparación de filtraciones';
-        $punto4 = 'Servicio de reparación de humedades';
-        $punto5 = ' Impermeabilización del condominio';
+        $punto4 = 'Servicio de impermeabilización de paredes';
         $precio = 151.25;
         break;
       case "cisternas":
         $titulo = "Lavado y desinfección de Cisternas";
         $imagen = "https://cdn-icons-png.flaticon.com/512/3022/3022982.png";
         $descripcion = "Ofrecemos el servicio de lavado y desinfección de cisternas con equipos de alta tecnología y personal capacitado. Garantizamos la eliminación de cualquier tipo de residuo o contaminante que pueda afectar la calidad del agua en tu hogar o negocio.";
-        $punto1 = "Lavado con agua a presión";
-        $punto2 = "Aspirado de sedimentos";
-        $punto3 = "Limpieza con productos desinfectantes";
-        $punto4 = "Certificación de calidad del agua";
+        $punto1 = "1200 L";
+        $punto2 = "2800 L";
+        $punto3 = "5000 L";
+        $punto4 = "10000 L";
         break;
       case "tinacos":
         $titulo = "Lavado y desinfección de tinacos";
         $imagen = "https://cdn-icons-png.flaticon.com/512/7608/7608679.png";
         $descripcion = "Realizamos el lavado y desinfección de tinacos en casas y negocios. Utilizamos productos desinfectantes de alta calidad y equipo especializado para garantizar la eliminación de residuos y contaminantes que puedan afectar la calidad del agua.";
-        $punto1 = "Limpieza manual con cepillos";
-        $punto2 = "Desinfección con productos químicos";
-        $punto3 = "Aspirado de sedimentos";
-        $punto4 = "Certificación de calidad del agua";
+        $punto1 = "De 450L a 600L";
+        $punto2 = "De 600L a  1100L";
+        $punto3 = "De 1100L a 2500L";
         break;
       case "albercas":
         $titulo = "Limpieza de Albercas";
@@ -193,10 +191,9 @@
         $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
         $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu fachada.";
         $punto1 = "Pintura y repintado de áreas comunes";
-        $punto2 = "Pintura y repintado en fachas del condominio";
-        $punto3 = "Restauración y reparación de superficies pintadas";
+        $punto2 = "Pintura antigrafitti";
+        $punto3 = "Retoque de pintura";
         $punto4 = "Pintura a herrería";
-        $punto5 = "Pintura antigrafitti";
         $precio = 125.35;
         break;
       case "puertas":
@@ -263,6 +260,61 @@
       </div>
     </div>
   </div>
+
+
+  <div class="tabla-cotizar">
+  <h2 class="titulo2">Cotización Preliminar</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Me interesa</th>
+          <th>Precio</th>
+          <th>Cotiza</th>
+          <th>Medida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php for ($i = 1; $i <= 10; $i++): ?>
+          <?php $punto = 'punto' . $i; ?>
+          <?php if (isset($$punto)): ?>
+            <tr>
+              <td><?php echo $$punto; ?></td>
+              <td>
+                <input type="checkbox" name="interesa[]" value="<?php echo $$punto; ?>" onclick="toggleInput(this)">
+              </td>
+              <td></td>
+              <td>
+                <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input" disabled>
+              </td>
+              <td>m<sup>2</sup></td>
+            </tr>
+          <?php endif; ?>
+        <?php endfor; ?>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+function toggleInput(checkbox) {
+  var row = checkbox.parentNode.parentNode;
+  var input = row.querySelector('input[type="text"]');
+  input.disabled = !checkbox.checked;
+}
+</script>
+
+
+
+<?php
+if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio== 'tinacos' || $servicio == 'cisternas') {
+  $codigo_html = ob_get_clean();
+  // Imprimir el código HTML generado
+  echo $codigo_html;
+}
+?>
+
 
 
   <?php

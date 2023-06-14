@@ -81,6 +81,30 @@
   background-color: #2d8b4e;
 }
 
+/* Aquí empiza tabla cotizar */
+
+.tabla-cotizar {
+  margin: 20px auto;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+}
+
+.smaller-input {
+  max-width: 80px;
+}
+
+@media (max-width: 800px) {
+  .table {
+    max-width: none;
+  }
+}
+
+
+/* Aquí termina tabla cotizar */
 .flex-container {
   display: flex;
   justify-content: center;

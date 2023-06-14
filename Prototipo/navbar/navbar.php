@@ -3,9 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-
 require __DIR__ . '/../database/database.php';
-
 
 if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT id_users, Email, password FROM users WHERE id_users = :id_users');
@@ -32,7 +30,7 @@ if (isset($_SESSION['user_id'])) {
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/Prototipo/index.php">SmartCondo</a>
                 </li>
                 <li class="nav-item">
@@ -73,6 +71,12 @@ if (isset($_SESSION['user_id'])) {
                         <a class="nav-link" href="/Prototipo/paginas/login.php">Iniciar sesión</a>
                     </li>
                 <?php endif; ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="https://img.icons8.com/ios7/600w/FFFFFF/service.png" alt="Carrito de compras"
+                            width="40" height="40">
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
