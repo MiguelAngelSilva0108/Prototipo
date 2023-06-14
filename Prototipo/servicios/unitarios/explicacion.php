@@ -290,6 +290,7 @@ function obtenerMedida($id)
     </div>
   </div>
 
+
 <!-- TABLA DE COTIZACIÓN -->
 <?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
   <div class="tabla-cotizar">
@@ -315,7 +316,9 @@ function obtenerMedida($id)
               <td>
                 <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input" disabled oninput="calcularSubtotal(this)">
               </td>
-              <td style="text-align: center;"><input type="checkbox" name="interesa[]" value="<?php echo $punto['nombre']; ?>" onclick="toggleInput(this)"></td>
+              <td style="text-align: center;">
+                <input type="checkbox" name="interesa[]" value="<?php echo $punto['nombre']; ?>" onclick="toggleInput(this)">
+              </td>
               <td></td>
             </tr>
           <?php endforeach; ?>
@@ -324,32 +327,37 @@ function obtenerMedida($id)
     </div>
   </div>
 
+  <div class="total">
+    <p>Total preliminar: <span id="totalPreliminar">0</span></p>
+  </div>
+
   <script>
     function toggleInput(checkbox) {
       var row = checkbox.parentNode.parentNode;
       var input = row.querySelector('input[type="text"]');
       input.disabled = !checkbox.checked;
-      if (!checkbox.checked) {
-        var subtotalCell = row.cells[5];
-        subtotalCell.innerText = ''; // Establecer el valor del subtotal como vacío cuando no se selecciona el checkbox
-      }
+      calcularSubtotal();
     }
 
-    function calcularSubtotal(input) {
-      var row = input.parentNode.parentNode;
-      var precioUnitario = parseFloat(row.cells[1].innerText);
-      var cotiza = parseFloat(input.value);
-      if (isNaN(cotiza)) {
-        cotiza = 0; // Establecer el valor de cotiza como cero si no es un número válido
+    function calcularSubtotal() {
+      var subtotalCells = document.querySelectorAll('.table tbody tr td:nth-child(6)');
+      var total = 0;
+      for (var i = 0; i < subtotalCells.length; i++) {
+        var row = subtotalCells[i].parentNode;
+        var precioUnitario = parseFloat(row.cells[1].innerText);
+        var cotizaInput = row.querySelector('input[type="text"]');
+        var cotiza = parseFloat(cotizaInput.value);
+        var subtotal = precioUnitario * cotiza;
+        if (!isNaN(subtotal)) {
+          row.cells[5].innerText = subtotal.toFixed(2);
+          total += subtotal;
+        }
       }
-      var subtotal = precioUnitario * cotiza;
-      row.cells[5].innerText = subtotal.toFixed(2); // Actualizar el valor del subtotal en la misma fila
+      document.getElementById('totalPreliminar').innerText = total.toFixed(2);
     }
   </script>
 <?php endif; ?>
 <!-- CIERRE DE TABLA DE COTIZACIÓN -->
-
-
 
 
 
