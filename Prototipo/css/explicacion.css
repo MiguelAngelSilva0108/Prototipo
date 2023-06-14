@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+.Titulo {
+  margin-top: 130px;
+  font-size: 2.9rem;
+  /* tamaño de fuente inicial */
+  font-family: 'Nunito', sans-serif;
+  color: #3E54AC;
+  text-align: center;
+  font-weight: 900;
+
+}
+
+.titulo2 {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  /* tamaño de fuente inicial */
+  font-family: 'Nunito', sans-serif;
+  color: #3E54AC;
+  text-align: center;
+  font-weight: 900;
+
+}
+
+.Descripcion {
+  background-color: #FFFF99;
+  /* Fondo amarillo */
+  color: #000000;
+  /* Letra negra */
+  font-weight: bold;
+  /* Negritas */
+  text-align: center;
+  /* Centrado */
+  padding: 15px;
+  /* Espacio interno */
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.total {
+  color: #000000; /* Letra negra */
+  font-weight: bold; /* Negritas */
+  text-align: center; /* Centrado */
+  padding: 10px; /* Espacio interno */
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+
+  display: flex; /* Utilizar flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+
+
+.btn-primary {
+  font-family: 'Nunito', sans-serif;
+  background-color: #2d3e8b;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  padding: 20px 40px;
+  /* Ajusta el tamaño del botón */
+  font-size: 1.3rem;
+  /* Ajusta el tamaño de fuente */
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  transition: all 0.3s ease;
+}
+
+
+.btn-primary:hover {
+  background-color: #ffc107;
+  /* Cambia el color de fondo del botón al pasar el cursor sobre él */
+  color: #2d3e8b;
+  /* Cambia el color de texto del botón al pasar el cursor sobre él */
+}
+
+.cotizar {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 45px;
+  color: #fff;
+  background-color: #ff8c00;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.cotizar:hover {
+  background-color: #2d8b4e;
+}
+
+/* Aquí empiza tabla cotizar */
+
+.tabla-cotizar {
+  margin: 20px auto;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+}
+
+.smaller-input {
+  max-width: 80px;
+}
+
+@media (max-width: 800px) {
+  .table {
+    max-width: none;
+  }
+}
+
+
+/* Aquí termina tabla cotizar */
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.list-container {
+  margin-right: 0px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: Nunito, sans-serif;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+.text-container {
+  margin-left: 30px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, .3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  visibility: hidden;
+}
+
+.overlay.active {
+  visibility: visible;
+}
+
+.popup {
+  background: #F8F8F8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+
+  transition: .3s ease all;
+  transform: scale(0.7);
+  opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  text-align: right;
+  transition: .3s ease all;
+  color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+  color: #000;
+}
+
+.popup h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.popup h4 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.popup form .contenedor-inputs {
+  opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 52px;
+  font-size: 18px;
+  line-height: 52px;
+  text-align: center;
+  border: 1px solid #BBBBBB;
+}
+
+.popup form .btn-submit {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  color: #fff;
+  background: #5E7DE3;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+  background: rgba(94, 125, 227, .9);
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.popup.active h3 {
+  animation: entradaTitulo .8s ease .5s forwards;
+}
+
+.popup.active h4 {
+  animation: entradaSubtitulo .8s ease .5s forwards;
+}
+
+.popup.active .contenedor-inputs {
+  animation: entradaInputs 1s linear 1s forwards;
+}
+
+@keyframes entradaTitulo {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaSubtitulo {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaInputs {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+form {
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.form-group label,
+.form-control,
+.btn {
+  font-family: "Nunito", sans-serif;
+}
+
+.form-group label,
+.cotizar {
+  font-family: 'Nunito', sans-serif;
+}
+
+.texto-grosor {
+  font-weight: 800;
+}
+
+.costo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  color: #03C988;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+
