@@ -1,3 +1,4 @@
+//popup.js
 var btnAbrirPopup = document.getElementById('btn-abrir-popup');
 btnAbrirPopup.addEventListener('click', validarSeleccion);
 
@@ -71,11 +72,20 @@ fechaInput.min = minDate.toISOString().split('T')[0];
 horaInput.addEventListener('change', function() {
   const selectedHour = parseInt(this.value.split(':')[0]);
 
+  let updatedMinDate = new Date(today); // Crea una copia actualizada de la fecha actual
+
   if (currentHour >= 18 || selectedHour >= 18) {
-    minDate.setDate(minDate.getDate() + 2);
+    updatedMinDate.setDate(updatedMinDate.getDate() + 2);
   } else {
-    minDate.setDate(minDate.getDate() + 1);
+    updatedMinDate.setDate(updatedMinDate.getDate() + 1);
   }
 
+  // Verifica si la fecha seleccionada es menor que la fecha mínima permitida
+  if (new Date(fechaInput.value) < updatedMinDate) {
+    fechaInput.value = ''; // Restablece el valor del campo de fecha si es menor que la fecha mínima
+  }
+
+  minDate = updatedMinDate;
   fechaInput.min = minDate.toISOString().split('T')[0];
 });
+
