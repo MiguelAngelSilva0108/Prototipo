@@ -292,8 +292,8 @@ function obtenerMedida($id)
   </div>
 
 
-  <!-- TABLA DE COTIZACIÓN -->
-  <?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
+<!-- TABLA DE COTIZACIÓN -->
+<?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
     <div class="tabla-cotizar">
       <h2 class="titulo2">Cotización Preliminar</h2>
       <div class="table-responsive">

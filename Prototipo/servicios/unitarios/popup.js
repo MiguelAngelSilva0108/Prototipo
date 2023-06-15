@@ -1,4 +1,3 @@
-//popup.js
 var btnAbrirPopup = document.getElementById('btn-abrir-popup');
 btnAbrirPopup.addEventListener('click', validarSeleccion);
 
@@ -23,23 +22,20 @@ function validarSeleccion() {
     mensajeError.textContent = 'Tiene que seleccionar un servicio para continuar';
     mensajeError.style.color = 'red';
     mensajeError.id = 'mensaje-error';
-    var form = document.querySelector('.form-no-calculo form');
-    form.parentNode.insertBefore(mensajeError, form);
-    return; // Detener la ejecución si no se selecciona ningún servicio
+    btnAbrirPopup.parentNode.insertBefore(mensajeError, btnAbrirPopup);
+  } else {
+    overlay.classList.add('active');
+    popup.classList.add('active');
   }
-
-  overlay.classList.add('active');
-  popup.classList.add('active');
-
-  // Habilitar inputs en la tabla si están marcados como "Me interesa"
-  var checkboxesTabla = document.querySelectorAll('.table tbody tr input[type="checkbox"]');
-  checkboxesTabla.forEach(function (checkbox) {
-    if (checkbox.checked) {
-      var input = checkbox.parentNode.parentNode.querySelector('input[type="text"]');
-      input.disabled = false;
-    }
-  });
 }
+
+function toggleInput(checkbox) {
+  var mensajeError = document.getElementById('mensaje-error');
+  if (mensajeError) {
+    mensajeError.parentNode.removeChild(mensajeError); // Eliminar el mensaje de error si existe
+  }
+}
+
 
 
 
