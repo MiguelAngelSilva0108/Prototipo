@@ -39,19 +39,43 @@
   margin-bottom: 40px;
 }
 
+.total {
+  color: #000000;
+  /* Letra negra */
+  font-weight: bold;
+  /* Negritas */
+  text-align: center;
+  /* Centrado */
+  padding: 10px;
+  /* Espacio interno */
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+
+  display: flex;
+  /* Utilizar flexbox */
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+}
+
+
+
 .btn-primary {
   font-family: 'Nunito', sans-serif;
   background-color: #2d3e8b;
   color: #fff;
   border-radius: 20px;
   border: none;
-  padding: 20px 40px;
-  /* Ajusta el tamaño del botón */
-  font-size: 1.3rem;
-  /* Ajusta el tamaño de fuente */
+  margin-top: 20px;
+  padding: 20px;
+  /* Ajusta el tamaño del botón /
+font-size: 1.2rem;
+/ Ajusta el tamaño de fuente */
   display: block;
-  margin: auto;
-  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   transition: all 0.3s ease;
 }
 
@@ -91,6 +115,7 @@
 
 .table {
   width: 100%;
+  font-family: Nunito, sans-serif;
 }
 
 .smaller-input {
@@ -129,10 +154,31 @@ p {
   text-align: justify;
 }
 
+.info {
+  color: #000000;
+  /* Letra negra */
+  font-weight: bold;
+  /* Negritas */
+  text-align: center;
+  /* Centrado */
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  margin-top: 60px;
+  display: flex;
+  /* Utilizar flexbox */
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+}
+
+
 .text-container {
   margin-left: 30px;
 }
 
+
+/* INICIO DE POPUP */
 .overlay {
   background: rgba(0, 0, 0, .3);
   position: fixed;
@@ -143,6 +189,8 @@ p {
   align-items: center;
   justify-content: center;
   display: flex;
+  overflow-y: auto;
+  /* Habilitar desplazamiento en el overlay */
   visibility: hidden;
 }
 
@@ -158,28 +206,26 @@ p {
   padding: 20px;
   text-align: center;
   width: 600px;
-
   transition: .3s ease all;
   transform: scale(0.7);
   opacity: 0;
+  z-index: 9999;
+  max-height: calc(100vh - 100px);
+  /* Ajusta el valor si es necesario */
+  overflow-y: auto;
+  /* Habilitar desplazamiento en el popup */
 }
 
-.popup .btn-cerrar-popup {
-  font-size: 16px;
-  line-height: 16px;
-  display: block;
-  text-align: right;
-  transition: .3s ease all;
-  color: #BBBBBB;
-}
-
-.popup .btn-cerrar-popup:hover {
-  color: #000;
+.popup button.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .popup h3 {
   font-size: 36px;
   font-weight: 600;
+  margin-top: 20px;
   margin-bottom: 10px;
   opacity: 0;
 }
@@ -223,9 +269,7 @@ p {
   background: rgba(94, 125, 227, .9);
 }
 
-/* ------------------------- */
 /* ANIMACIONES */
-/* ------------------------- */
 .popup.active {
   transform: scale(1);
   opacity: 1;
@@ -258,7 +302,7 @@ p {
 @keyframes entradaSubtitulo {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(-25px);
   }
 
   to {
@@ -270,10 +314,21 @@ p {
 @keyframes entradaInputs {
   from {
     opacity: 0;
+    transform: translateY(25px);
   }
 
   to {
+    transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Consulta de medios para pantallas más pequeñas */
+@media (max-width: 770px) {
+  .popup {
+    margin-top: 50px;
+    width: auto;
+    max-width: calc(100% - 40px);
   }
 }
 
@@ -306,5 +361,3 @@ form {
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
-
-

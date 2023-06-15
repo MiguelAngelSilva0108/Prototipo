@@ -1,3 +1,28 @@
+<?php
+require('../../database/database.php');
+
+function obtenerPrecioUnitario($id)
+{
+  global $conn;
+  $query = $conn->prepare("SELECT precio FROM services WHERE id_services = :id");
+  $query->bindParam(":id", $id, PDO::PARAM_INT);
+  $query->execute();
+  $row = $query->fetch(PDO::FETCH_ASSOC);
+  return $row['precio'];
+}
+
+function obtenerMedida($id)
+{
+  global $conn;
+  $query = $conn->prepare("SELECT medida FROM services WHERE id_services = :id");
+  $query->bindParam(":id", $id, PDO::PARAM_INT);
+  $query->execute();
+  $row = $query->fetch(PDO::FETCH_ASSOC);
+  return $row['medida'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +58,60 @@
   if (isset($_GET['servicio'])) {
     $servicio = $_GET['servicio'];
     switch ($servicio) {
+      case "pintura":
+        $titulo = "Pintura interior y exterior";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
+        $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu inmueble.";
+        $puntos = array(
+          array("id" => 1, "nombre" => "Pintura y repintado de áreas comunes"),
+          array("id" => 2, "nombre" => "Pintura antigrafitti"),
+          array("id" => 3, "nombre" => "Retoque de pintura"),
+          array("id" => 4, "nombre" => "Pintura a herrería")
+        );
+        break;
+      case "impermeabilizacion":
+        $titulo = "Impermeabilización";
+        $descripcion = 'Si te gustaría proteger tu inmueble frente a las diversas condiciones meteorológicas, la impermeabilización es la alternativa perfecta.';
+        $imagen = "https://cdn-icons-png.flaticon.com/512/129/129817.png";
+        $puntos = array(
+          array("id" => 5, "nombre" => "Impermeabilización de techos del condominio (Caucho)"),
+          array("id" => 6, "nombre" => "Impermeabilización de techos del condominio (Terracota)"),
+          array("id" => 7, "nombre" => "Servicio de reparación de filtraciones"),
+          array("id" => 8, "nombre" => "Servicio de impermeabilización de paredes")
+        );
+        break;
+      case "cisternas":
+        $titulo = "Lavado y desinfección de Cisternas";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/3022/3022982.png";
+        $descripcion = "Ofrecemos el servicio de lavado y desinfección de cisternas con equipos de alta tecnología y personal capacitado. Garantizamos la eliminación de cualquier tipo de residuo o contaminante que pueda afectar la calidad del agua en tu hogar o negocio.";
+        $puntos = array(
+          array("id" => 9, "nombre" => "1200 L"),
+          array("id" => 10, "nombre" => "2800 L"),
+          array("id" => 11, "nombre" => "5000 L"),
+          array("id" => 12, "nombre" => "10000 L")
+        );
+        break;
+      case "tinacos":
+        $titulo = "Lavado y desinfección de tinacos";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/7608/7608679.png";
+        $descripcion = "Realizamos el lavado y desinfección de tinacos en casas y negocios. Utilizamos productos desinfectantes de alta calidad y equipo especializado para garantizar la eliminación de residuos y contaminantes que puedan afectar la calidad del agua.";
+        $puntos = array(
+          array("id" => 13, "nombre" => "De 450L a 600L"),
+          array("id" => 14, "nombre" => "De 600L a 1100L"),
+          array("id" => 15, "nombre" => "De 1100L a 2500L")
+        );
+        break;
+      case "albercas":
+        $titulo = "Limpieza de Albercas";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/78/78682.png";
+        $descripcion = "Realizamos la limpieza y mantenimiento de albercas en casas y negocios. Contamos con personal capacitado y equipo especializado para mantener el agua de tu alberca limpia y cristalina.
+        Desinfectamos el agua, aspiramos los asentamiento, verificamos el pH y limpiamos tu equipo de filtrado";
+        $punto1 = "Limpieza de superficie y paredes";
+        $punto2 = "Aspirado de sedimentos";
+        $punto3 = "Verificación y ajuste de químicos";
+        $punto4 = "Limpieza y mantenimiento de equipo de filtrado";
+        $punto5 = "Reparaciones menores";
+        break;
       case 'administracion':
         $titulo = 'Administración y recolección de recursos monetarios';
         $descripcion = 'Gestión y control de los  recursos monetarios asociados con el mantenimiento y operación del condominio.';
@@ -104,43 +183,6 @@
         $punto4 = 'Gestión efectiva de los asuntos legales y gubernamentales';
         $punto5 = 'Garantia de la protección de los intereses y derechos';
         break;
-      case "impermeabilizacion":
-        $titulo = "Impermeabilización";
-        $descripcion = 'Si te gustaría proteger tu inmueble frente a las diversas condiciones meteorológicas, la impermeabilización es la alternativa perfecta.';
-        $imagen = "https://cdn-icons-png.flaticon.com/512/129/129817.png";
-        $punto1 = 'Impermeabilización de techos del condominio (Caucho)';
-        $punto2 = 'Impermeabilización de techos del condominio (Terracota)';
-        $punto3 = ' Servicio de reparación de filtraciones';
-        $punto4 = 'Servicio de impermeabilización de paredes';
-        $precio = 151.25;
-        break;
-      case "cisternas":
-        $titulo = "Lavado y desinfección de Cisternas";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/3022/3022982.png";
-        $descripcion = "Ofrecemos el servicio de lavado y desinfección de cisternas con equipos de alta tecnología y personal capacitado. Garantizamos la eliminación de cualquier tipo de residuo o contaminante que pueda afectar la calidad del agua en tu hogar o negocio.";
-        $punto1 = "1200 L";
-        $punto2 = "2800 L";
-        $punto3 = "5000 L";
-        $punto4 = "10000 L";
-        break;
-      case "tinacos":
-        $titulo = "Lavado y desinfección de tinacos";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/7608/7608679.png";
-        $descripcion = "Realizamos el lavado y desinfección de tinacos en casas y negocios. Utilizamos productos desinfectantes de alta calidad y equipo especializado para garantizar la eliminación de residuos y contaminantes que puedan afectar la calidad del agua.";
-        $punto1 = "De 450L a 600L";
-        $punto2 = "De 600L a  1100L";
-        $punto3 = "De 1100L a 2500L";
-        break;
-      case "albercas":
-        $titulo = "Limpieza de Albercas";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/78/78682.png";
-        $descripcion = "Realizamos la limpieza y mantenimiento de albercas en casas y negocios. Contamos con personal capacitado y equipo especializado para mantener el agua de tu alberca limpia y cristalina.";
-        $punto1 = "Limpieza de superficie y paredes";
-        $punto2 = "Aspirado de sedimentos";
-        $punto3 = "Verificación y ajuste de químicos";
-        $punto4 = "Limpieza y mantenimiento de equipo de filtrado";
-        $punto5 = "Reparaciones menores";
-        break;
       case "limpieza":
         $titulo = "Limpieza de áreas comunes";
         $imagen = "https://cdn-icons-png.flaticon.com/512/2866/2866900.png";
@@ -183,19 +225,8 @@
         $punto1 = "Contamos con maquinaria especializada para realizar poda de pasto de manera rápida y eficiente.";
         $punto2 = "Realizamos desbroce de maleza y recorte de bordes.";
         $punto3 = "Ofrecemos servicio de mantenimiento de jardines y áreas verdes.";
-        $precio = 82.99;
         break;
 
-      case "pintura":
-        $titulo = "Pintura interior y exterior";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
-        $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu fachada.";
-        $punto1 = "Pintura y repintado de áreas comunes";
-        $punto2 = "Pintura antigrafitti";
-        $punto3 = "Retoque de pintura";
-        $punto4 = "Pintura a herrería";
-        $precio = 125.35;
-        break;
       case "puertas":
         $titulo = "Puertas automáticas";
         $imagen = "https://cdn-icons-png.flaticon.com/512/2457/2457981.png";
@@ -211,7 +242,6 @@
         $punto1 = "Pulido de pisos de áreas comunes";
         $punto2 = "Abrillantado de pisos de áreas comunes";
         $punto3 = "Mantenimiento de superficies pulidas como mármol o granito";
-        $precio = 112.75;
         break;
       case "cuotas":
         $titulo = "Recolección de Cuotas";
@@ -262,191 +292,117 @@
   </div>
 
 
-  <div class="tabla-cotizar">
-  <h2 class="titulo2">Cotización Preliminar</h2>
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Elemento</th>
-          <th>Me interesa</th>
-          <th>Precio</th>
-          <th>Cotiza</th>
-          <th>Medida</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php for ($i = 1; $i <= 10; $i++): ?>
-          <?php $punto = 'punto' . $i; ?>
-          <?php if (isset($$punto)): ?>
+  <!-- TABLA DE COTIZACIÓN -->
+  <?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
+    <div class="tabla-cotizar">
+      <h2 class="titulo2">Cotización Preliminar</h2>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
             <tr>
-              <td><?php echo $$punto; ?></td>
-              <td>
-                <input type="checkbox" name="interesa[]" value="<?php echo $$punto; ?>" onclick="toggleInput(this)">
-              </td>
-              <td></td>
-              <td>
-                <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input" disabled>
-              </td>
-              <td>m<sup>2</sup></td>
+              <th>Servicio</th>
+              <th>Precio Unitario</th>
+              <th>Medida</th>
+              <th>Cotiza</th>
+              <th>Me interesa</th>
+              <th>Subtotal</th>
             </tr>
-          <?php endif; ?>
-        <?php endfor; ?>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<script>
-function toggleInput(checkbox) {
-  var row = checkbox.parentNode.parentNode;
-  var input = row.querySelector('input[type="text"]');
-  input.disabled = !checkbox.checked;
-}
-</script>
-
-
-
-<?php
-if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio== 'tinacos' || $servicio == 'cisternas') {
-  $codigo_html = ob_get_clean();
-  // Imprimir el código HTML generado
-  echo $codigo_html;
-}
-?>
-
-
-
-  <?php
-
-  if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'pasto' || $servicio == 'pulido') {
-    $codigo_html = '<div class="container">
-    <h2 class="titulo2">Cotización Preliminar</h2>
-    <form id="cotizacionForm">
-        <div class="form-group">
-            <label for="m2" class="texto-grosor">m<sup>2</sup> aproximados de trabajo:</label>
-            <input type="number" class="form-control" id="m2" placeholder="Ingrese los m2">
-        </div>
-        <div id="resultado" class="mt-4"></div>
-        <button type="submit" class="btn btn-secondary cotizar">Cotización</button>
-    </form>
-</div>';
-    // Imprimir el código HTML generado
-    echo $codigo_html;
-  }
-  ?>
-
-  <script>
-    $(document).ready(function () {
-      $('#cotizacionForm').submit(function (e) {
-        e.preventDefault();
-        var m2 = $('#m2').val();
-        var precio = <?php echo $precio; ?>;
-        var costo = m2 * precio;
-        $('#resultado').html('<span class="costo">El costo preliminar sería de $' + costo.toFixed(2) + '</span>');
-      });
-    });
-  </script>
-
-
-  <div class="form-no-calculo">
-    <div class="contenedor">
-      <article>
-        <button id="btn-abrir-popup" class="btn btn-primary btn-abrir-popup">Quiero agendar una cita gratuita</button>
-      </article>
-      <div class="overlay" id="overlay">
-        <div class="popup container" id="popup">
-          <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-          <h3>Agenda una cita completamente gratis</h3>
-          <h4>Nosotros te llamamos, estamos a tu servicio</h4>
-          <form action="">
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input type="text" name="Nombres" class="form-control" id="floatingInput"
-                    placeholder="name@example.com" required>
-                  <label for="floatingInput">Nombre Completo</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" required>
-                  <label for="floatingInputEmail">Email address</label>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input type="text" name="Celular" class="form-control" id="floatingInputCelular"
-                    placeholder="name@example.com">
-                  <label for="floatingInputCelular">Teléfono Celular</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-floating">
-                  <input type="text" name="CP" class="form-control" id="floatingInputCP" placeholder="name@example.com">
-                  <label for="floatingInputCP">Código Postal</label>
-                </div>
-              </div>
-            </div>
-            <div class="row g-2">
-              <div class="col-md">
-                <label for="fecha">Fecha de llamada:</label>
-                <input type="date" id="fecha" class="form-control">
-              </div>
-              <div class="col-md">
-                <label for="hora">Hora de llamada:</label>
-                <select name="Hora" class="form-select" id="hora" aria-label="Default select example">
-                  <option selected>Selecciona una hora</option>
-                  <option value="09:00">09:00 AM</option>
-                  <option value="09:30">09:30 AM</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="10:30">10:30 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="11:30">11:30 AM</option>
-                  <option value="12:00">12:00 PM</option>
-                  <option value="12:30">12:30 PM</option>
-                  <option value="13:00">01:00 PM</option>
-                  <option value="13:30">01:30 PM</option>
-                  <option value="14:00">02:00 PM</option>
-                  <option value="14:30">02:30 PM</option>
-                  <option value="15:00">03:00 PM</option>
-                  <option value="15:30">03:30 PM</option>
-                  <option value="16:00">04:00 PM</option>
-                  <option value="16:30">04:30 PM</option>
-                  <option value="17:00">05:00 PM</option>
-                  <option value="17:30">05:30 PM</option>
-                  <option value="18:00">06:00 PM</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">¡Quiero una cita!</button>
-          </form>
-        </div>
+          </thead>
+          <tbody>
+            <?php foreach ($puntos as $punto): ?>
+              <tr>
+                <td>
+                  <?php echo $punto['nombre']; ?>
+                </td>
+                <td>$
+                  <?php echo obtenerPrecioUnitario($punto['id']); ?>
+                </td>
+                <td>
+                  <?php echo obtenerMedida($punto['id']); ?>
+                </td>
+                <td>
+                  <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input"
+                    disabled oninput="calcularSubtotal(this)">
+                </td>
+                <td style="text-align: center;">
+                  <input type="checkbox" name="interesa[]" value="<?php echo $punto['nombre']; ?>"
+                    onclick="toggleInput(this)">
+                </td>
+                <td></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
     </div>
-    <script>
-      const fechaInput = document.getElementById('fecha');
-      const today = new Date();
-      today.setDate(today.getDate() + 1); // Suma 1 día al día actual
 
-      const year = today.getFullYear();
-      const month = (today.getMonth() + 1).toString().padStart(2, '0');
-      const day = today.getDate().toString().padStart(2, '0');
-      const minDate = `${year}-${month}-${day}`;
-      fechaInput.min = minDate;
-    </script>
+    <div class="total">
+      <p>Cotización Preliminar: $<span id="Cotizar">0*</span></p>
+    </div>
+    <script src="tabla.js"></script>
+  <?php endif; ?>
+  <!-- CIERRE DE TABLA DE COTIZACIÓN -->
 
+  <!-- POPUP -->
+<!-- Formulario -->
+<div class="form-no-calculo">
+  <div class="contenedor">
+    <article>
+      <button id="btn-abrir-popup" class="btn btn-primary btn-abrir-popup">Quiero agendar una cita gratuita</button>
+      <?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
+        <div class="info">
+          *Este es un costo meramente informativo. El costo real, lo entregará el agente al final de su visita.
+        </div>
+      <?php endif; ?>
+    </article>
+    <div class="overlay" id="overlay">
+      <div class="popup container" id="popup">
+        <button id="btn-cerrar-popup" class="btn-close" aria-label="Close"></button>
+        <h3>Agenda una cita completamente gratis</h3>
+        <h4>Nosotros te visitamos, estamos a tu servicio</h4>
+        <form action="">
+          <div class="row g-2">
+            <div class="col-md">
+              <label for="fecha">Fecha de Visita:</label>
+              <?php date_default_timezone_set('America/Mexico_City'); // Establecer la zona horaria adecuada ?>
+              <?php $tomorrow = date('Y-m-d', strtotime('+1 day')); // Obtener la fecha actual + 1 día ?>
+              <input type="date" id="fecha" class="form-control" min="<?php echo $tomorrow; ?>" required>
+            </div>
+            <div class="col-md">
+              <label for="hora">Hora de Visita:</label>
+              <select name="Hora" class="form-select" id="hora" aria-label="Default select example">
+                <option selected>Selecciona una hora</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="09:30">09:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="13:30">01:30 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="14:30">02:30 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="15:30">03:30 PM</option>
+                <option value="16:00">04:00 PM</option>
+                <option value="16:30">04:30 PM</option>
+                <option value="17:00">05:00 PM</option>
+                <option value="17:30">05:30 PM</option>
+                <option value="18:00">06:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">¡Quiero una cita!</button>
+        </form>
+      </div>
+    </div>
   </div>
-
-
-
-
-  <script src="popup.js"></script>
-
-
-
+</div>
+<!-- FIN DE FORMULARIO -->
+<script src="popup.js"></script>
+<!-- FIN DE POPUP -->
 
 
   <br>

@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
+.main-content {
+  margin-top: 70px;
+}
+
+/* INICIO DE NAVBAR */
 .navbar {
   background-color: white;
   margin-left: auto;
+  z-index: 1;
 }
 
 .navbar a {
@@ -75,6 +81,10 @@
 .dropdown-menu a {
   color: #000000;
 }
+
+
+/* FIN DE NAVBAR */
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
