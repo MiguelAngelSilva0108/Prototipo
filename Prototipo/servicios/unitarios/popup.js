@@ -1,13 +1,51 @@
 //popup.js
 var btnAbrirPopup = document.getElementById('btn-abrir-popup');
+btnAbrirPopup.addEventListener('click', validarSeleccion);
+
+function validarSeleccion() {
+  var checkboxes = document.querySelectorAll('input[name="interesa[]"]');
+  var servicioSeleccionado = false;
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      servicioSeleccionado = true;
+      break;
+    }
+  }
+
+  var mensajeError = document.getElementById('mensaje-error');
+  if (mensajeError) {
+    mensajeError.parentNode.removeChild(mensajeError); // Eliminar el mensaje de error si existe
+  }
+
+  if (!servicioSeleccionado) {
+    mensajeError = document.createElement('p');
+    mensajeError.textContent = 'Tiene que seleccionar un servicio para continuar';
+    mensajeError.style.color = 'red';
+    mensajeError.id = 'mensaje-error';
+    var form = document.querySelector('.form-no-calculo form');
+    form.parentNode.insertBefore(mensajeError, form);
+    return; // Detener la ejecución si no se selecciona ningún servicio
+  }
+
+  overlay.classList.add('active');
+  popup.classList.add('active');
+
+  // Habilitar inputs en la tabla si están marcados como "Me interesa"
+  var checkboxesTabla = document.querySelectorAll('.table tbody tr input[type="checkbox"]');
+  checkboxesTabla.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      var input = checkbox.parentNode.parentNode.querySelector('input[type="text"]');
+      input.disabled = false;
+    }
+  });
+}
+
+
+
 var overlay = document.getElementById('overlay');
 var popup = document.getElementById('popup');
 var btnCerrarPopup = document.getElementById('btn-cerrar-popup');
-
-btnAbrirPopup.addEventListener('click', function() {
-  overlay.classList.add('active');
-  popup.classList.add('active');
-});
 
 btnCerrarPopup.addEventListener('click', function(e) {
   e.preventDefault();
@@ -45,4 +83,3 @@ horaInput.addEventListener('change', function() {
 
   fechaInput.min = minDate.toISOString().split('T')[0];
 });
-

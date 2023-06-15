@@ -361,3 +361,11 @@ form {
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
+
+#mensaje-error {
+  font-size: 1rem;
+  color: red;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  font-weight: 400;
+}

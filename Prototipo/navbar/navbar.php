@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 require __DIR__ . '/../database/database.php';
 
 if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT id_users, Email, password FROM users WHERE id_users = :id_users');
+    $records = $conn->prepare('SELECT id_users, Nombres, AP, AM, password FROM users WHERE id_users = :id_users');
     $records->bindParam(':id_users', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -50,33 +50,27 @@ if (isset($_SESSION['user_id'])) {
                 <?php if (!empty($user)): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/Prototipo/index.php">
-                            <?= $user['Email']; ?>
+                            <?= $user['Nombres'] . ' ' . $user['AP'] . ' ' . $user['AM']; ?>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Prototipo/paginas/logout.php">Cerrar Sesión</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Facturación
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./paginas/crearfactura.php">Crear Factura</a></li>
-                            <li><a class="dropdown-item" href="#">Consultar Factura</a></li>
-                        </ul>
-                    </li>
+                    <!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Facturación
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="./paginas/crearfactura.php">Crear Factura</a></li>
+        <li><a class="dropdown-item" href="#">Consultar Factura</a></li>
+    </ul>
+</li> -->
                 <?php else: ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/Prototipo/paginas/login.php">Iniciar sesión</a>
                     </li>
                 <?php endif; ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="https://img.icons8.com/ios7/600w/FFFFFF/service.png" alt="Carrito de compras"
-                            width="40" height="40">
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
