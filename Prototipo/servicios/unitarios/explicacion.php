@@ -1,28 +1,3 @@
-<?php
-require('../../database/database.php');
-
-function obtenerPrecioUnitario($id)
-{
-  global $conn;
-  $query = $conn->prepare("SELECT precio FROM services WHERE id_services = :id");
-  $query->bindParam(":id", $id, PDO::PARAM_INT);
-  $query->execute();
-  $row = $query->fetch(PDO::FETCH_ASSOC);
-  return $row['precio'];
-}
-
-function obtenerMedida($id)
-{
-  global $conn;
-  $query = $conn->prepare("SELECT medida FROM services WHERE id_services = :id");
-  $query->bindParam(":id", $id, PDO::PARAM_INT);
-  $query->execute();
-  $row = $query->fetch(PDO::FETCH_ASSOC);
-  return $row['medida'];
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,59 +33,6 @@ function obtenerMedida($id)
   if (isset($_GET['servicio'])) {
     $servicio = $_GET['servicio'];
     switch ($servicio) {
-      case "pintura":
-        $titulo = "Pintura interior y exterior";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
-        $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu fachada.";
-        $puntos = array(
-          array("id" => 1, "nombre" => "Pintura y repintado de áreas comunes"),
-          array("id" => 2, "nombre" => "Pintura antigrafitti"),
-          array("id" => 3, "nombre" => "Retoque de pintura"),
-          array("id" => 4, "nombre" => "Pintura a herrería")
-        );
-        break;
-      case "impermeabilizacion":
-        $titulo = "Impermeabilización";
-        $descripcion = 'Si te gustaría proteger tu inmueble frente a las diversas condiciones meteorológicas, la impermeabilización es la alternativa perfecta.';
-        $imagen = "https://cdn-icons-png.flaticon.com/512/129/129817.png";
-        $puntos = array(
-          array("id" => 5, "nombre" => "Impermeabilización de techos del condominio (Caucho)"),
-          array("id" => 6, "nombre" => "Impermeabilización de techos del condominio (Terracota)"),
-          array("id" => 7, "nombre" => "Servicio de reparación de filtraciones"),
-          array("id" => 8, "nombre" => "Servicio de impermeabilización de paredes")
-        );
-        break;
-      case "cisternas":
-        $titulo = "Lavado y desinfección de Cisternas";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/3022/3022982.png";
-        $descripcion = "Ofrecemos el servicio de lavado y desinfección de cisternas con equipos de alta tecnología y personal capacitado. Garantizamos la eliminación de cualquier tipo de residuo o contaminante que pueda afectar la calidad del agua en tu hogar o negocio.";
-        $puntos = array(
-          array("id" => 9, "nombre" => "1200 L"),
-          array("id" => 10, "nombre" => "2800 L"),
-          array("id" => 11, "nombre" => "5000 L"),
-          array("id" => 12, "nombre" => "10000 L")
-        );
-        break;
-      case "tinacos":
-        $titulo = "Lavado y desinfección de tinacos";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/7608/7608679.png";
-        $descripcion = "Realizamos el lavado y desinfección de tinacos en casas y negocios. Utilizamos productos desinfectantes de alta calidad y equipo especializado para garantizar la eliminación de residuos y contaminantes que puedan afectar la calidad del agua.";
-        $puntos = array(
-          array("id" => 13, "nombre" => "De 450L a 600L"),
-          array("id" => 14, "nombre" => "De 600L a 1100L"),
-          array("id" => 15, "nombre" => "De 1100L a 2500L")
-        );
-        break;
-      case "albercas":
-        $titulo = "Limpieza de Albercas";
-        $imagen = "https://cdn-icons-png.flaticon.com/512/78/78682.png";
-        $descripcion = "Realizamos la limpieza y mantenimiento de albercas en casas y negocios. Contamos con personal capacitado y equipo especializado para mantener el agua de tu alberca limpia y cristalina.";
-        $punto1 = "Limpieza de superficie y paredes";
-        $punto2 = "Aspirado de sedimentos";
-        $punto3 = "Verificación y ajuste de químicos";
-        $punto4 = "Limpieza y mantenimiento de equipo de filtrado";
-        $punto5 = "Reparaciones menores";
-        break;
       case 'administracion':
         $titulo = 'Administración y recolección de recursos monetarios';
         $descripcion = 'Gestión y control de los  recursos monetarios asociados con el mantenimiento y operación del condominio.';
@@ -182,6 +104,43 @@ function obtenerMedida($id)
         $punto4 = 'Gestión efectiva de los asuntos legales y gubernamentales';
         $punto5 = 'Garantia de la protección de los intereses y derechos';
         break;
+      case "impermeabilizacion":
+        $titulo = "Impermeabilización";
+        $descripcion = 'Si te gustaría proteger tu inmueble frente a las diversas condiciones meteorológicas, la impermeabilización es la alternativa perfecta.';
+        $imagen = "https://cdn-icons-png.flaticon.com/512/129/129817.png";
+        $punto1 = 'Impermeabilización de techos del condominio (Caucho)';
+        $punto2 = 'Impermeabilización de techos del condominio (Terracota)';
+        $punto3 = ' Servicio de reparación de filtraciones';
+        $punto4 = 'Servicio de impermeabilización de paredes';
+        $precio = 151.25;
+        break;
+      case "cisternas":
+        $titulo = "Lavado y desinfección de Cisternas";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/3022/3022982.png";
+        $descripcion = "Ofrecemos el servicio de lavado y desinfección de cisternas con equipos de alta tecnología y personal capacitado. Garantizamos la eliminación de cualquier tipo de residuo o contaminante que pueda afectar la calidad del agua en tu hogar o negocio.";
+        $punto1 = "1200 L";
+        $punto2 = "2800 L";
+        $punto3 = "5000 L";
+        $punto4 = "10000 L";
+        break;
+      case "tinacos":
+        $titulo = "Lavado y desinfección de tinacos";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/7608/7608679.png";
+        $descripcion = "Realizamos el lavado y desinfección de tinacos en casas y negocios. Utilizamos productos desinfectantes de alta calidad y equipo especializado para garantizar la eliminación de residuos y contaminantes que puedan afectar la calidad del agua.";
+        $punto1 = "De 450L a 600L";
+        $punto2 = "De 600L a  1100L";
+        $punto3 = "De 1100L a 2500L";
+        break;
+      case "albercas":
+        $titulo = "Limpieza de Albercas";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/78/78682.png";
+        $descripcion = "Realizamos la limpieza y mantenimiento de albercas en casas y negocios. Contamos con personal capacitado y equipo especializado para mantener el agua de tu alberca limpia y cristalina.";
+        $punto1 = "Limpieza de superficie y paredes";
+        $punto2 = "Aspirado de sedimentos";
+        $punto3 = "Verificación y ajuste de químicos";
+        $punto4 = "Limpieza y mantenimiento de equipo de filtrado";
+        $punto5 = "Reparaciones menores";
+        break;
       case "limpieza":
         $titulo = "Limpieza de áreas comunes";
         $imagen = "https://cdn-icons-png.flaticon.com/512/2866/2866900.png";
@@ -224,8 +183,19 @@ function obtenerMedida($id)
         $punto1 = "Contamos con maquinaria especializada para realizar poda de pasto de manera rápida y eficiente.";
         $punto2 = "Realizamos desbroce de maleza y recorte de bordes.";
         $punto3 = "Ofrecemos servicio de mantenimiento de jardines y áreas verdes.";
+        $precio = 82.99;
         break;
 
+      case "pintura":
+        $titulo = "Pintura interior y exterior";
+        $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
+        $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu fachada.";
+        $punto1 = "Pintura y repintado de áreas comunes";
+        $punto2 = "Pintura antigrafitti";
+        $punto3 = "Retoque de pintura";
+        $punto4 = "Pintura a herrería";
+        $precio = 125.35;
+        break;
       case "puertas":
         $titulo = "Puertas automáticas";
         $imagen = "https://cdn-icons-png.flaticon.com/512/2457/2457981.png";
@@ -241,6 +211,7 @@ function obtenerMedida($id)
         $punto1 = "Pulido de pisos de áreas comunes";
         $punto2 = "Abrillantado de pisos de áreas comunes";
         $punto3 = "Mantenimiento de superficies pulidas como mármol o granito";
+        $precio = 112.75;
         break;
       case "cuotas":
         $titulo = "Recolección de Cuotas";
@@ -291,74 +262,91 @@ function obtenerMedida($id)
   </div>
 
 
-<!-- TABLA DE COTIZACIÓN -->
-<?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
   <div class="tabla-cotizar">
-    <h2 class="titulo2">Cotización Preliminar</h2>
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Servicio</th>
-            <th>Precio Unitario</th>
-            <th>Medida</th>
-            <th>Cotiza</th>
-            <th>Me interesa</th>
-            <th>Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($puntos as $punto): ?>
+  <h2 class="titulo2">Cotización Preliminar</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Me interesa</th>
+          <th>Precio</th>
+          <th>Cotiza</th>
+          <th>Medida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php for ($i = 1; $i <= 10; $i++): ?>
+          <?php $punto = 'punto' . $i; ?>
+          <?php if (isset($$punto)): ?>
             <tr>
-              <td><?php echo $punto['nombre']; ?></td>
-              <td><?php echo obtenerPrecioUnitario($punto['id']); ?></td>
-              <td><?php echo obtenerMedida($punto['id']); ?></td>
+              <td><?php echo $$punto; ?></td>
               <td>
-                <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input" disabled oninput="calcularSubtotal(this)">
-              </td>
-              <td style="text-align: center;">
-                <input type="checkbox" name="interesa[]" value="<?php echo $punto['nombre']; ?>" onclick="toggleInput(this)">
+                <input type="checkbox" name="interesa[]" value="<?php echo $$punto; ?>" onclick="toggleInput(this)">
               </td>
               <td></td>
+              <td>
+                <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input" disabled>
+              </td>
+              <td>m<sup>2</sup></td>
             </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-    </div>
+          <?php endif; ?>
+        <?php endfor; ?>
+      </tbody>
+    </table>
   </div>
+</div>
 
-  <div class="total">
-    <p>Total preliminar: <span id="totalPreliminar">0</span></p>
-  </div>
+<script>
+function toggleInput(checkbox) {
+  var row = checkbox.parentNode.parentNode;
+  var input = row.querySelector('input[type="text"]');
+  input.disabled = !checkbox.checked;
+}
+</script>
+
+
+
+<?php
+if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio== 'tinacos' || $servicio == 'cisternas') {
+  $codigo_html = ob_get_clean();
+  // Imprimir el código HTML generado
+  echo $codigo_html;
+}
+?>
+
+
+
+  <?php
+
+  if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'pasto' || $servicio == 'pulido') {
+    $codigo_html = '<div class="container">
+    <h2 class="titulo2">Cotización Preliminar</h2>
+    <form id="cotizacionForm">
+        <div class="form-group">
+            <label for="m2" class="texto-grosor">m<sup>2</sup> aproximados de trabajo:</label>
+            <input type="number" class="form-control" id="m2" placeholder="Ingrese los m2">
+        </div>
+        <div id="resultado" class="mt-4"></div>
+        <button type="submit" class="btn btn-secondary cotizar">Cotización</button>
+    </form>
+</div>';
+    // Imprimir el código HTML generado
+    echo $codigo_html;
+  }
+  ?>
 
   <script>
-    function toggleInput(checkbox) {
-      var row = checkbox.parentNode.parentNode;
-      var input = row.querySelector('input[type="text"]');
-      input.disabled = !checkbox.checked;
-      calcularSubtotal();
-    }
-
-    function calcularSubtotal() {
-      var subtotalCells = document.querySelectorAll('.table tbody tr td:nth-child(6)');
-      var total = 0;
-      for (var i = 0; i < subtotalCells.length; i++) {
-        var row = subtotalCells[i].parentNode;
-        var precioUnitario = parseFloat(row.cells[1].innerText);
-        var cotizaInput = row.querySelector('input[type="text"]');
-        var cotiza = parseFloat(cotizaInput.value);
-        var subtotal = precioUnitario * cotiza;
-        if (!isNaN(subtotal)) {
-          row.cells[5].innerText = subtotal.toFixed(2);
-          total += subtotal;
-        }
-      }
-      document.getElementById('totalPreliminar').innerText = total.toFixed(2);
-    }
+    $(document).ready(function () {
+      $('#cotizacionForm').submit(function (e) {
+        e.preventDefault();
+        var m2 = $('#m2').val();
+        var precio = <?php echo $precio; ?>;
+        var costo = m2 * precio;
+        $('#resultado').html('<span class="costo">El costo preliminar sería de $' + costo.toFixed(2) + '</span>');
+      });
+    });
   </script>
-<?php endif; ?>
-<!-- CIERRE DE TABLA DE COTIZACIÓN -->
-
 
 
   <div class="form-no-calculo">
@@ -382,8 +370,7 @@ function obtenerMedida($id)
               </div>
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com"
-                    required>
+                  <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" required>
                   <label for="floatingInputEmail">Email address</label>
                 </div>
               </div>

@@ -39,22 +39,6 @@
   margin-bottom: 40px;
 }
 
-.total {
-  color: #000000; /* Letra negra */
-  font-weight: bold; /* Negritas */
-  text-align: center; /* Centrado */
-  padding: 10px; /* Espacio interno */
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-
-  display: flex; /* Utilizar flexbox */
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-}
-
-
-
 .btn-primary {
   font-family: 'Nunito', sans-serif;
   background-color: #2d3e8b;
