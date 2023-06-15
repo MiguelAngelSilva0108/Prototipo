@@ -1,0 +1,80 @@
+.text-center {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+  }
+
+  .LogoLogin {
+    text-align: center;
+    margin: 25px auto 0 auto;
+  }
+  
+  
+
+ 
+  
+  .card-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    color: #333;
+    background-color: #fff;
+    font-weight: 550;
+  }
+
+.form-label {
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+}
+
+.form-floating {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #e83e8c;
+  border-color: #e83e8c;
+}
+
+.btn-primary {
+  background-color: #e83e8c;
+  border-color: #e83e8c;
+  color: #fff;
+  font-size: 25px;
+  padding: 5px 25px;
+  font-family: 'Poppins', sans-serif;
+  border-radius:25px;
+}
+
+.card-footer{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded {
+  margin-top: 25px;
+}
+
+@media (min-width: 992px) { /* breakpoint para pantallas grandes */
+  .col-lg-6 {
+    max-width: 50% !important;
+  }
+}
+
+
+
