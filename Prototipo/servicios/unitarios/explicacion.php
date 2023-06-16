@@ -292,118 +292,125 @@ function obtenerMedida($id)
   </div>
 
 
-  <!-- TABLA DE COTIZACIÓN -->
-  <?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
-    <div class="tabla-cotizar">
-      <h2 class="titulo2">Cotización Preliminar</h2>
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
+<!-- TABLA DE COTIZACIÓN -->
+<?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
+  <div class="tabla-cotizar">
+    <h2 class="titulo2">Cotización Preliminar</h2>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Precio Unitario</th>
+            <th>Medida</th>
+            <th>Cotiza</th>
+            <th>Subtotal</th>
+            <th>Me interesa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($puntos as $punto): ?>
             <tr>
-              <th>Servicio</th>
-              <th>Precio Unitario</th>
-              <th>Medida</th>
-              <th>Cotiza</th>
-              <th>Me interesa</th>
-              <th>Subtotal</th>
+              <td>
+                <?php echo $punto['nombre']; ?>
+              </td>
+              <td>$
+                <?php echo obtenerPrecioUnitario($punto['id']); ?>
+              </td>
+              <td>
+                <?php echo obtenerMedida($punto['id']); ?>
+              </td>
+              <td>
+                <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input">
+              </td>
+              <td>
+                <span class="subtotal"></span>
+              </td>
+              <td style="text-align: center;">
+                <input type="checkbox" name="interesa[]" value="<?php echo $punto['nombre']; ?>"
+                  onclick="toggleInput(this)">
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($puntos as $punto): ?>
-              <tr>
-                <td>
-                  <?php echo $punto['nombre']; ?>
-                </td>
-                <td>$
-                  <?php echo obtenerPrecioUnitario($punto['id']); ?>
-                </td>
-                <td>
-                  <?php echo obtenerMedida($punto['id']); ?>
-                </td>
-                <td>
-                  <input type="text" name="cotiza[]" placeholder="0" class="form-control input-sm rounded smaller-input"
-                    disabled oninput="calcularSubtotal(this)">
-                </td>
-                <td style="text-align: center;">
-                  <input type="checkbox" name="interesa[]" value="<?php echo $punto['nombre']; ?>"
-                    onclick="toggleInput(this)">
-                </td>
-                <td></td>
-              </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
-      </div>
+          <?php endforeach; ?>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5" style="text-align: right; font-weight: bold; font-size: 1.3rem;">Cotización Preliminar:</td>
+            <td id="Cotizar" style="font-weight: bold; font-size: 1.3rem;">$0.00</td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
+  </div>
+  <script src="tabla.js"></script>
+<?php endif; ?>
+<!-- CIERRE DE TABLA DE COTIZACIÓN -->
 
-    <div class="total">
-      <p>Cotización Preliminar: $<span id="Cotizar">0*</span></p>
-    </div>
-    <script src="tabla.js"></script>
-  <?php endif; ?>
-  <!-- CIERRE DE TABLA DE COTIZACIÓN -->
 
-  <!-- POPUP -->
-  <!-- Formulario -->
-  <div class="form-no-calculo">
-    <div class="contenedor">
-      <article>
-        <button id="btn-abrir-popup" class="btn btn-primary btn-abrir-popup">Quiero agendar una cita gratuita</button>
-        <?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
-          <div class="info">
-            *Este es un costo meramente informativo. El costo real, lo entregará el agente al final de su visita.
-          </div>
-        <?php endif; ?>
-      </article>
-      <div class="overlay" id="overlay">
-        <div class="popup container" id="popup">
-          <button id="btn-cerrar-popup" class="btn-close" aria-label="Close"></button>
-          <h3>Agenda una cita completamente gratis</h3>
-          <h4>Nosotros te visitamos, estamos a tu servicio</h4>
-          <form action="" id="formulario-cita" onsubmit="return validarFormulario()">
-            <div class="row g-2">
-              <div class="col-md">
-                <label for="fecha">Fecha de Visita:</label>
-                <?php date_default_timezone_set('America/Mexico_City'); // Establecer la zona horaria adecuada ?>
-                <?php $tomorrow = date('Y-m-d', strtotime('+1 day')); // Obtener la fecha actual + 1 día ?>
-                <input type="date" id="fecha" class="form-control" min="<?php echo $tomorrow; ?>" required>
-              </div>
-              <div class="col-md">
-                <label for="hora">Hora de Visita:</label>
-                <select required name="Hora" class="form-select" id="hora" aria-label="Default select example">
-                  <option value="">Selecciona una hora</option>
-                  <option value="09:00">09:00 AM</option>
-                  <option value="09:30">09:30 AM</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="10:30">10:30 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="11:30">11:30 AM</option>
-                  <option value="12:00">12:00 PM</option>
-                  <option value="12:30">12:30 PM</option>
-                  <option value="13:00">01:00 PM</option>
-                  <option value="13:30">01:30 PM</option>
-                  <option value="14:00">02:00 PM</option>
-                  <option value="14:30">02:30 PM</option>
-                  <option value="15:00">03:00 PM</option>
-                  <option value="15:30">03:30 PM</option>
-                  <option value="16:00">04:00 PM</option>
-                  <option value="16:30">04:30 PM</option>
-                  <option value="17:00">05:00 PM</option>
-                  <option value="17:30">05:30 PM</option>
-                  <option value="18:00">06:00 PM</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">¡Quiero una cita!</button>
-          </form>
+
+
+<!-- POPUP -->
+<!-- Formulario -->
+<div class="form-no-calculo">
+  <div class="contenedor">
+    <article>
+      <button id="btn-abrir-popup" class="btn btn-primary btn-abrir-popup">Quiero agendar una cita gratuita</button>
+      <?php if ($servicio == 'impermeabilizacion' || $servicio == 'pintura' || $servicio == 'tinacos' || $servicio == 'cisternas'): ?>
+        <div class="info">
+          *Este es un costo meramente informativo. El costo real, lo entregará el agente al final de su visita.
         </div>
+      <?php endif; ?>
+    </article>
+    <div class="overlay" id="overlay">
+      <div class="popup container" id="popup">
+        <button id="btn-cerrar-popup" class="btn-close" aria-label="Close"></button>
+        <h3>Agenda una cita completamente gratis</h3>
+        <h4>Nosotros te visitamos, estamos a tu servicio</h4>
+        <form action="" id="formulario-cita" onsubmit="return validarFormulario()">
+          <div class="row g-2">
+            <div class="col-md">
+              <label for="fecha">Fecha de Visita:</label>
+              <?php date_default_timezone_set('America/Mexico_City'); // Establecer la zona horaria adecuada ?>
+              <?php $tomorrow = date('Y-m-d', strtotime('+1 day')); // Obtener la fecha actual + 1 día ?>
+              <input type="date" id="fecha" class="form-control" min="<?php echo $tomorrow; ?>" required>
+            </div>
+            <div class="col-md">
+              <label for="hora">Hora de Visita:</label>
+              <select required name="Hora" class="form-select" id="hora" aria-label="Default select example">
+                <option value="">Selecciona una hora</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="09:30">09:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="13:30">01:30 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="14:30">02:30 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="15:30">03:30 PM</option>
+                <option value="16:00">04:00 PM</option>
+                <option value="16:30">04:30 PM</option>
+                <option value="17:00">05:00 PM</option>
+                <option value="17:30">05:30 PM</option>
+                <option value="18:00">06:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">¡Quiero una cita!</button>
+        </form>
       </div>
     </div>
   </div>
-  <!-- FIN DE FORMULARIO -->
+</div>
+<!-- FIN DE FORMULARIO -->
 
-  <script src="popup.js"></script>
-  <!-- FIN DE POPUP -->
+<script src="popup.js"></script>
+<!-- FIN DE POPUP -->
+
 
 
 

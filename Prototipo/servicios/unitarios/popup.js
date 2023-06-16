@@ -1,3 +1,4 @@
+// popup.js
 var btnAbrirPopup = document.getElementById('btn-abrir-popup');
 btnAbrirPopup.addEventListener('click', validarFormulario);
 
@@ -73,4 +74,3 @@ horaInput.addEventListener('change', function() {
     fechaInput.value = minDate.toISOString().split('T')[0]; // Restaura la fecha mínima si es menor que la fecha mínima permitida
   }
 });
-
