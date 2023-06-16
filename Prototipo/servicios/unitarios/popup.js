@@ -1,8 +1,9 @@
-//popup.js
 var btnAbrirPopup = document.getElementById('btn-abrir-popup');
-btnAbrirPopup.addEventListener('click', validarSeleccion);
+btnAbrirPopup.addEventListener('click', validarFormulario);
 
-function validarSeleccion() {
+function validarFormulario(event) {
+  event.preventDefault(); // Evitar el envío del formulario por defecto
+
   var checkboxes = document.querySelectorAll('input[name="interesa[]"]');
   var servicioSeleccionado = false;
 
@@ -37,9 +38,6 @@ function toggleInput(checkbox) {
   }
 }
 
-
-
-
 var overlay = document.getElementById('overlay');
 var popup = document.getElementById('popup');
 var btnCerrarPopup = document.getElementById('btn-cerrar-popup');
@@ -70,22 +68,9 @@ if (currentHour >= 18) {
 fechaInput.min = minDate.toISOString().split('T')[0];
 
 horaInput.addEventListener('change', function() {
-  const selectedHour = parseInt(this.value.split(':')[0]);
-
-  let updatedMinDate = new Date(today); // Crea una copia actualizada de la fecha actual
-
-  if (currentHour >= 18 || selectedHour >= 18) {
-    updatedMinDate.setDate(updatedMinDate.getDate() + 2);
-  } else {
-    updatedMinDate.setDate(updatedMinDate.getDate() + 1);
-  }
-
   // Verifica si la fecha seleccionada es menor que la fecha mínima permitida
-  if (new Date(fechaInput.value) < updatedMinDate) {
-    fechaInput.value = ''; // Restablece el valor del campo de fecha si es menor que la fecha mínima
+  if (new Date(fechaInput.value) < minDate) {
+    fechaInput.value = minDate.toISOString().split('T')[0]; // Restaura la fecha mínima si es menor que la fecha mínima permitida
   }
-
-  minDate = updatedMinDate;
-  fechaInput.min = minDate.toISOString().split('T')[0];
 });
 
