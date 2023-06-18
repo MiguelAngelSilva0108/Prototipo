@@ -5,7 +5,7 @@ require '../database/database.php';
 $message = '';
 
 
-//Recibiendo numInt
+//Recibiendo TODOS LOS REGISTROS DE USUARIOS
 if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) && !empty($_POST['Celular']) && !empty($_POST['Email']) && !empty($_POST['password']) && !empty($_POST['Servicio']) && !empty($_POST['Calle']) && !empty($_POST['Colonia']) && !empty($_POST['NumExt']) && !empty($_POST['Municipio']) && !empty($_POST['CP']) && !empty($_POST['Estado']) && !empty($_POST['RFC']) && !empty($_POST['Nombre_Condominio']) && !empty($_POST['Calle_Condominio']) && !empty($_POST['Colonia_Condominio']) && !empty($_POST['NumExt_Condominio']) && !empty($_POST['Municipio_Condominio']) && !empty($_POST['CP_Condominio']) && !empty($_POST['Estado_Condominio'])) {
     $sql = "INSERT INTO users (Nombres, AP, AM, Celular, Email, password, Servicio, Calle, Colonia, NumExt, NumInt, Municipio, CP, Estado, RFC, Nombre_Condominio, Calle_Condominio, Colonia_Condominio, NumExt_Condominio, Municipio_Condominio, CP_Condominio, Estado_Condominio) VALUES (:Nombres, :AP, :AM, :Celular, :Email, :password, :Servicio, :Calle, :Colonia, :NumExt, :NumInt, :Municipio, :CP, :Estado, :Nombre_Condominio, :RFC, :Calle_Condominio, :Colonia_Condominio, :NumExt_Condominio, :Municipio_Condominio, :CP_Condominio, :Estado_Condominio)";
     $stmt = $conn->prepare($sql);
@@ -46,10 +46,6 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 
 
 }
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,14 +114,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                 <!--AP-->
                                 <div class="form-floating mb-3">
                                     <input type="text" name='AM' class="form-control" id="floatingInput"
-                                        placeholder="name@example.com" />
+                                        placeholder="name@example.com" required/>
                                     <label htmlFor="floatingInput">Apellido Materno</label>
                                 </div>
                                 <!--Celular-->
                                 <div>
                                     <div class="form-floating mb-3">
                                         <input type="text" name="Celular" class="form-control" id="floatingInput"
-                                            placeholder="name@example.com" />
+                                            placeholder="name@example.com" required/>
                                         <label htmlFor="floatingInput">Teléfono Celular</label>
                                     </div>
                                 </div>
@@ -133,7 +129,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                 <!--Email-->
                                 <div class="form-floating mb-3">
                                     <input type="email" name='Email' class="form-control" id="floatingInputValue"
-                                        placeholder="name@example.com" />
+                                        placeholder="name@example.com" required/>
                                     <label htmlFor="floatingInputValue">Correo electrónico</label>
                                 </div>
 
@@ -141,14 +137,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                 <!--Botón de contraseña-->
                                 <div class="form-floating mb-3">
                                     <input type="password" name='password' class="form-control" id="floatingPassword"
-                                        placeholder="Password" />
+                                        placeholder="Password" required/>
                                     <label htmlFor="floatingPassword">Contraseña</label>
                                 </div>
 
                                 <!--Botón de confirmar contraseña-->
                                 <div class="form-floating mb-3">
                                     <input type="password" name='confirmpassword' class="form-control"
-                                        id="floatingPassword" placeholder="Password" />
+                                        id="floatingPassword" placeholder="Password" required/>
                                     <label htmlFor="floatingPassword">Confirma contraseña</label>
                                 </div>
 
@@ -157,11 +153,11 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                 <div class="form-floating mb-3">
                                     <select class="form-select" name='Servicio' id="floatingSelect"
                                         aria-label="Floating label select example"
-                                        defaultValue="Seleccione un Servicio">
+                                        defaultValue="Seleccione un Servicio"required>
                                         <option value="">Seleccione el tamaño de condominio</option>
-                                        <option value="Internet + Telefonía 30 MB">De 15 a 30 departamentos</option>
-                                        <option value="Internet + Telefonía 50 MB">De 30 a 50 departamentos</option>
-                                        <option value="Internet + Telefonía 100MB">50 o más departamentos</option>
+                                        <option value="De 15 a 30 departamentos">De 15 a 30 departamentos</option>
+                                        <option value="De 30 a 50 departamentos">De 30 a 50 departamentos</option>
+                                        <option value="50 o más departamentos">50 o más departamentos</option>
                                     </select>
                                     <label htmlFor="floatingSelect">Servicio contratado o deseado</label>
                                 </div>
@@ -173,14 +169,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='Calle' class="form-control" id="floatingInputGrid"
-                                                placeholder="name@example.com" />
+                                                placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">Calle</label>
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='Colonia' class="form-control"
-                                                id="floatingInputGrid" placeholder="name@example.com" />
+                                                id="floatingInputGrid" placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">Colonia</label>
                                         </div>
                                     </div>
@@ -191,7 +187,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='NumExt' class="form-control" id="floatingInputGrid"
-                                                placeholder="name@example.com" />
+                                                placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">Num ext</label>
                                         </div>
                                     </div>
@@ -209,14 +205,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='Municipio' class="form-control"
-                                                id="floatingInputGrid" placeholder="name@example.com" />
+                                                id="floatingInputGrid" placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">Alcaldia o Municipio</label>
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='CP' class="form-control" id="floatingInputGrid"
-                                                placeholder="name@example.com" />
+                                                placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">C.P.</label>
                                         </div>
                                     </div>
@@ -225,7 +221,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                 <!--Estado*-->
                                 <div class="form-floating mb-3">
                                     <select class="form-select" name='Estado' id="floatingSelect"
-                                        aria-label="Floating label select example" defaultValue="">
+                                        aria-label="Floating label select example" defaultValue="" required>
 
                                         <option value="">Seleccione un Estado</option>
                                         <option value="Aguascalientes">Aguascalientes</option>
@@ -289,14 +285,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='Calle_Condominio' class="form-control"
-                                                id="floatingInputGrid" placeholder="name@example.com" />
+                                                id="floatingInputGrid" placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">Calle</label>
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='NumExt_Condominio' class="form-control"
-                                                id="floatingInputGrid" placeholder="name@example.com" />
+                                                id="floatingInputGrid" placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">Num ext</label>
 
                                         </div>
@@ -305,8 +301,8 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 
                                 <!--Número ext e int-->
                                 <div class="form-floating mb-3">
-                                    <input type="text" name='Colonia_Condominio' class="form-control" id="floatingInputGrid"
-                                        placeholder="name@example.com" />
+                                    <input type="text" name='Colonia_Condominio' class="form-control"
+                                        id="floatingInputGrid" placeholder="name@example.com" required/>
                                     <label htmlFor="floatingInputGrid">Colonia</label>
                                 </div>
 
@@ -316,14 +312,14 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='Municipio_Condominio' class="form-control"
-                                                id="floatingInputGrid" placeholder="name@example.com" />
+                                                id="floatingInputGrid" placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">Alcaldia o Municipio</label>
                                         </div>
                                     </div>
                                     <div class="col-md">
                                         <div class="form-floating mb-3">
                                             <input type="text" name='CP_Condominio' class="form-control"
-                                                id="floatingInputGrid" placeholder="name@example.com" />
+                                                id="floatingInputGrid" placeholder="name@example.com" required/>
                                             <label htmlFor="floatingInputGrid">C.P.</label>
                                         </div>
                                     </div>
@@ -332,7 +328,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
                                 <!--Estado*-->
                                 <div class="form-floating mb-3">
                                     <select class="form-select" name='Estado_Condominio' id="floatingSelect"
-                                        aria-label="Floating label select example" defaultValue="">
+                                        aria-label="Floating label select example" defaultValue="" required>
 
                                         <option value="">Seleccione un Estado</option>
                                         <option value="Aguascalientes">Aguascalientes</option>
@@ -391,11 +387,12 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
 
         </div>
     </div>
- <br>
- <br>
- <br>
- <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </body>
 <?PHP require('../footer/footer.php');
-    ?>
+?>
+
 </html>

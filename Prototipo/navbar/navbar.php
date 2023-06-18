@@ -6,14 +6,14 @@ if (!isset($_SESSION)) {
 require __DIR__ . '/../database/database.php';
 
 if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT id_users, Nombres, AP, AM, password FROM users WHERE id_users = :id_users');
+    $records = $conn->prepare('SELECT id_users, Nombres, AP, AM, Celular, Email, Servicio, Calle, Colonia, NumExt, NumInt, Municipio, CP, Estado, RFC, Nombre_Condominio, Calle_Condominio, Colonia_Condominio, NumExt_Condominio, Municipio_Condominio, CP_Condominio, Estado_Condominio FROM users WHERE id_users = :id_users');
     $records->bindParam(':id_users', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
     $user = null;
 
-    if (count($results) > 0) {
+    if (is_array($results) && count($results) > 0) {
         $user = $results;
     }
 }
@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id'])) {
                 </li>
                 <?php if (!empty($user)): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Prototipo/index.php">
+                        <a class="nav-link" href="/Prototipo/paginas/usuario.php">
                             <?= $user['Nombres'] . ' ' . $user['AP'] . ' ' . $user['AM']; ?>
                         </a>
                     </li>
