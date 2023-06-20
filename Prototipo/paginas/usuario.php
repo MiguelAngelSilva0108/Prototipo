@@ -51,7 +51,7 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo $nombreUsuario; ?> - Servicios Unitarios
+        Perfil
     </title>
     <link rel="icon" href="https://cdn.freebiesupply.com/logos/large/2x/s-bahn-1-logo-png-transparent.png"
         type="image/png">
@@ -84,7 +84,7 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
     <p class="text-center" style="font-family: Poppins; font-size: 24px;">CondoSmart 24/7 para ti</p>
 
 
-
+    <!--MODIFICAR CON UPDATE-->
     <div class="update">
         <form action="usuario.php" method="POST">
             <div class="row">
@@ -299,7 +299,7 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
                             <!--RFC-->
                             <div class="form-floating mb-3">
                                 <input type="text" name='RFC' class="form-control" id="floatingInput"
-                                    placeholder="name@example.com" required 
+                                    placeholder="name@example.com" required
                                     value="<?php echo isset($user['RFC']) ? $user['RFC'] : ''; ?>" />
                                 <label htmlFor="floatingInput">RFC</label>
                             </div>
@@ -313,7 +313,7 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
                             <!--Nombres-->
                             <div class="form-floating mb-3">
                                 <input type="text" name='Nombre_Condominio' class="form-control" id="floatingInput"
-                                    placeholder="name@example.com" required 
+                                    placeholder="name@example.com" required
                                     value="<?php echo isset($user['Nombre_Condominio']) ? $user['Nombre_Condominio'] : ''; ?>" />
                                 <label htmlFor="floatingInput">Nombre del condominio</label>
                             </div>
@@ -331,8 +331,8 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
                                 <div class="col-md">
                                     <div class="form-floating mb-3">
                                         <input type="text" name='NumExt_Condominio' class="form-control"
-                                            id="floatingInputGrid" placeholder="name@example.com" required 
-                                            value="<?php echo isset($user['NumExt_Condominio']) ? $user['NumExt_Condominio'] : ''; ?>"/>
+                                            id="floatingInputGrid" placeholder="name@example.com" required
+                                            value="<?php echo isset($user['NumExt_Condominio']) ? $user['NumExt_Condominio'] : ''; ?>" />
                                         <label htmlFor="floatingInputGrid">Num ext</label>
 
                                     </div>
@@ -342,8 +342,8 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
                             <!--Número ext e int-->
                             <div class="form-floating mb-3">
                                 <input type="text" name='Colonia_Condominio' class="form-control" id="floatingInputGrid"
-                                    placeholder="name@example.com" required 
-                                    value="<?php echo isset($user['Colonia_Condominio']) ? $user['Colonia_Condominio'] : ''; ?>"/>
+                                    placeholder="name@example.com" required
+                                    value="<?php echo isset($user['Colonia_Condominio']) ? $user['Colonia_Condominio'] : ''; ?>" />
                                 <label htmlFor="floatingInputGrid">Colonia</label>
                             </div>
 
@@ -353,16 +353,16 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
                                 <div class="col-md">
                                     <div class="form-floating mb-3">
                                         <input type="text" name='Municipio_Condominio' class="form-control"
-                                            id="floatingInputGrid" placeholder="name@example.com" required 
-                                            value="<?php echo isset($user['Municipio_Condominio']) ? $user['Municipio_Condominio'] : ''; ?>"/>
+                                            id="floatingInputGrid" placeholder="name@example.com" required
+                                            value="<?php echo isset($user['Municipio_Condominio']) ? $user['Municipio_Condominio'] : ''; ?>" />
                                         <label htmlFor="floatingInputGrid">Alcaldia o Municipio</label>
                                     </div>
                                 </div>
                                 <div class="col-md">
                                     <div class="form-floating mb-3">
                                         <input type="text" name='CP_Condominio' class="form-control"
-                                            id="floatingInputGrid" placeholder="name@example.com" required 
-                                            value="<?php echo isset($user['CP_Condominio']) ? $user['CP_Condominio'] : ''; ?>"/>
+                                            id="floatingInputGrid" placeholder="name@example.com" required
+                                            value="<?php echo isset($user['CP_Condominio']) ? $user['CP_Condominio'] : ''; ?>" />
                                         <label htmlFor="floatingInputGrid">C.P.</label>
                                     </div>
                                 </div>
@@ -461,11 +461,101 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
                     </div>
                 </div>
             </div>
-
         </form>
+    </div>
+    </div>
+    <!--FIN MODIFICAR UPDATE-->
 
+
+
+    <?php
+
+    if (!empty($_POST['password'])) {
+        $password = $_POST['password'];
+
+        $message = '';
+
+        // Realiza la comprobación de contraseña en el lado del servidor
+        $records = $conn->prepare('SELECT id_users, password FROM users WHERE id_users = :user_id');
+        $records->bindParam(':user_id', $_SESSION['user_id']);
+        $records->execute();
+        $results = $records->fetch(PDO::FETCH_ASSOC);
+
+        if (is_array($results) && count($results) > 0 && password_verify($password, $results['password'])) {
+            // Contraseña correcta, procede con la eliminación de la cuenta
+            // ...
+            if (isset($_SESSION['user_id'])) {
+                $deleteStmt = $conn->prepare('DELETE FROM users WHERE id_users = :id_users');
+                $deleteStmt->bindParam(':id_users', $_SESSION['user_id']);
+
+                if ($deleteStmt->execute()) {
+                    $message = 'Usuario eliminado exitosamente';
+                } else {
+                    $message = 'Error al eliminar el usuario';
+                }
+            }
+            session_unset();
+
+            session_destroy();
+            exit;
+        } else {
+            // Contraseña incorrecta, muestra un mensaje de error
+            $message = '<span style="color: red; font-weight: bold; font-family: Poppins; display: block; margin-top: 30px; text-align: center;">Contraseña incorrecta</span>';
+        }
+    }
+    ?>
+
+    <!-- Resto del código HTML -->
+
+    <!-- ELIMINAR CUENTA -->
+    <div class='delete'>
+        <form action="usuario.php" method="post">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 offset-15 mt-5 mx-auto">
+                    <div class="card pt-5">
+                        <div class="card-header">
+                            ESTA ACCIÓN ELIMINARÁ TU CUENTA PERMANENTEMENTE
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header">
+                                Ingresa tu contraseña
+                            </div>
+                            <?php if (!empty($message)): ?>
+                                <p class="text-danger mt-3">
+                                    <?php echo $message; ?>
+                                </p>
+                            <?php endif; ?>
+                            <!-- Botón de contraseña -->
+                            <div class="form-floating mb-3">
+                                <input type="password" name='password' class="form-control" id="floatingPassword"
+                                    placeholder="Password" required />
+                                <label htmlFor="floatingPassword">Contraseña</label>
+                            </div>
+
+                            <!-- Fin de formulario -->
+
+                            <div class="d-grid gap-2 mb-3">
+                                <button class="btn btn-primary" type="submit">ELIMINAR CUENTA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-    </div>
+    <!-- FIN ELIMINAR CUENTA -->
+
+    <script>
+        // Borrar mensaje de error al escribir la contraseña
+        document.getElementById('floatingPassword').addEventListener('input', function () {
+            document.querySelector('.text-danger').innerHTML = '';
+        });
+    </script>
+
+
+
+
+
     <br>
     <br>
     <br>

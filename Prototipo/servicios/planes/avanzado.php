@@ -170,8 +170,82 @@
       $cotizacionUrl = '../../paginas/login.php';
     }
     ?>
-    <button type="button" class="btn btn-primary"
-      onclick="<?php echo "window.location.href='" . $cotizacionUrl . "'"; ?>">¡Quiero una cotización!</button>
+    
+    <!-- POPUP -->
+<!-- Formulario -->
+<div class="form-no-calculo">
+  <div class="contenedor">
+    <article>
+      <button type="button" class="btn btn-primary btn-abrir-popup" onclick="abrirPopup()">¡Quiero agendar una cita gratuita!</button>
+    </article>
+    <div class="overlay" id="overlay">
+      <div class="popup container" id="popup">
+        <button id="btn-cerrar-popup" class="btn-close" aria-label="Close"></button>
+        <h3>Agenda una cita completamente gratis</h3>
+        <h4>Nosotros te visitamos, estamos a tu servicio</h4>
+        <form action="" id="formulario-cita">
+          <div class="row g-2">
+            <div class="col-md">
+              <label for="fecha">Fecha de Visita:</label>
+              <?php date_default_timezone_set('America/Mexico_City'); // Establecer la zona horaria adecuada ?>
+              <?php $tomorrow = date('Y-m-d', strtotime('+1 day')); // Obtener la fecha actual + 1 día ?>
+              <input type="date" id="fecha" class="form-control" min="<?php echo $tomorrow; ?>" required>
+            </div>
+            <div class="col-md">
+              <label for="hora">Hora de Visita:</label>
+              <select required name="Hora" class="form-select" id="hora" aria-label="Default select example">
+                <option value="">Selecciona una hora</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="09:30">09:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="13:30">01:30 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="14:30">02:30 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="15:30">03:30 PM</option>
+                <option value="16:00">04:00 PM</option>
+                <option value="16:30">04:30 PM</option>
+                <option value="17:00">05:00 PM</option>
+                <option value="17:30">05:30 PM</option>
+                <option value="18:00">06:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" >¡Quiero una cita!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FIN DE FORMULARIO -->
+
+<script>
+  function abrirPopup() {
+  console.log('Función abrirPopup() ejecutada');
+  var overlay = document.getElementById('overlay');
+  var popup = document.getElementById('popup');
+  overlay.classList.add('active');
+  popup.classList.add('active');
+}
+
+
+  var btnCerrarPopup = document.getElementById('btn-cerrar-popup');
+  btnCerrarPopup.addEventListener('click', function(e) {
+    e.preventDefault();
+    var overlay = document.getElementById('overlay');
+    var popup = document.getElementById('popup');
+    overlay.classList.remove('active');
+    popup.classList.remove('active');
+  });
+</script>
+<!-- FIN DE POPUP -->
+
 
   </div>
 

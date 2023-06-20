@@ -138,4 +138,207 @@
   }
 
 
+  .popup {
+    display: none;
+  }
   
+  .overlay.active {
+    display: flex;
+  }
+  
+  .popup.active {
+    display: block;
+  }
+  
+
+  /* INICIO DE POPUP */
+.overlay {
+  background: rgba(0, 0, 0, .3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  overflow-y: auto;
+  /* Habilitar desplazamiento en el overlay */
+  visibility: hidden;
+}
+
+.overlay.active {
+  visibility: visible;
+}
+
+.popup {
+  background: #F8F8F8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+  transition: .3s ease all;
+  transform: scale(0.7);
+  opacity: 0;
+  z-index: 9999;
+  max-height: calc(100vh - 100px);
+  /* Ajusta el valor si es necesario */
+  overflow-y: auto;
+  /* Habilitar desplazamiento en el popup */
+}
+
+.popup button.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.popup h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.popup h4 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.popup form .contenedor-inputs {
+  opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 52px;
+  font-size: 18px;
+  line-height: 52px;
+  text-align: center;
+  border: 1px solid #BBBBBB;
+}
+
+.popup form .btn-submit {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  color: #fff;
+  background: #5E7DE3;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+  background: rgba(94, 125, 227, .9);
+}
+
+/* ANIMACIONES */
+.popup.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.popup.active h3 {
+  animation: entradaTitulo .8s ease .5s forwards;
+}
+
+.popup.active h4 {
+  animation: entradaSubtitulo .8s ease .5s forwards;
+}
+
+.popup.active .contenedor-inputs {
+  animation: entradaInputs 1s linear 1s forwards;
+}
+
+@keyframes entradaTitulo {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaSubtitulo {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaInputs {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Consulta de medios para pantallas más pequeñas */
+@media (max-width: 770px) {
+  .popup {
+    margin-top: 50px;
+    width: auto;
+    max-width: calc(100% - 40px);
+  }
+}
+
+
+
+form {
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.form-group label,
+.form-control,
+.btn {
+  font-family: "Nunito", sans-serif;
+}
+
+.form-group label,
+.cotizar {
+  font-family: 'Nunito', sans-serif;
+}
+
+.texto-grosor {
+  font-weight: 800;
+}
+
+.costo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  color: #03C988;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#mensaje-error {
+  font-size: 1rem;
+  color: red;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  font-weight: 400;
+}

@@ -17,27 +17,27 @@
         <h5 class="mb-4">Redes Sociales</h5>
         <ul class="list-unstyled">
 
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100093816670285">Facebook</a></li>
+          <li><a href="https://www.instagram.com/smartcondo0/">Instagram</a></li>
+          <li><a href="https://twitter.com/smartcondo1">Twitter</a></li>
         </ul>
       </div>
       <div class="col-md-3">
         <h5 class="mb-4">Contacto</h5>
         <ul class="list-unstyled">
 
-          <li><a href="">Correo electrónico</a></li>
-          <li><a href="#">Teléfono</a></li>
-          <li><a href="#">Dirección</a></li>
+          <li>Email:<br>smartcondo<br>0@gmail.com</li>
+          <li>Teléfono: 5527650125</li>
+          <li>Dirección: Jalapa 55<br> Col. Roma</li>
         </ul>
       </div>
       <div class="col-md-3">
         <h5 class="mb-4">Formas de pago</h5>
         <ul class="list-unstyled">
 
-          <li><a href="#">Tarjeta de crédito</a></li>
-          <li><a href="#">Transferencia bancaria</a></li>
-          <li><a href="#">Pago en efectivo</a></li>
+          <li>Tarjeta de crédito</li>
+          <li>Transferencia bancaria</li>
+          <li>Pago en efectivo</li>
         </ul>
       </div>
     </div>
