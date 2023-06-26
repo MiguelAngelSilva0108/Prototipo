@@ -33,11 +33,14 @@ function validarFormulario(event) {
 }
 
 function toggleInput(checkbox) {
+  var cotizaInput = checkbox.parentNode.parentNode.querySelector('input[name="cotiza[]"]');
+  cotizaInput.disabled = !checkbox.checked;
   var mensajeError = document.getElementById('mensaje-error');
   if (mensajeError) {
     mensajeError.parentNode.removeChild(mensajeError); // Eliminar el mensaje de error si existe
   }
 }
+
 
 var overlay = document.getElementById('overlay');
 var popup = document.getElementById('popup');

@@ -67,6 +67,7 @@
   background-color: #2d3e8b;
   color: #fff;
   border-radius: 20px;
+  font-size: 1.2rem;
   border: none;
   margin-top: 20px;
   padding: 20px;
@@ -86,6 +87,8 @@ font-size: 1.2rem;
   color: #2d3e8b;
   /* Cambia el color de texto del botón al pasar el cursor sobre él */
 }
+
+
 
 .cotizar {
   font-family: 'Nunito', sans-serif;

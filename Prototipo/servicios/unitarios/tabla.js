@@ -1,3 +1,4 @@
+//tabla.js
 window.addEventListener('DOMContentLoaded', function() {
   // Obtén todos los campos de texto "cotiza[]"
   var cotizaInputs = document.querySelectorAll('input[name="cotiza[]"]');
@@ -34,4 +35,21 @@ function calcularSubtotal() {
   }
 
   document.getElementById('Cotizar').innerText = total.toFixed(2);
+}
+
+function validarNumero(input) {
+  // Reemplazar las comas por puntos para asegurar el formato decimal correcto
+  input.value = input.value.replace(",", ".");
+
+  // Validar si el número está dentro del rango permitido
+  if (input.validity.valid) {
+    var numero = parseFloat(input.value);
+    if (isNaN(numero) || numero < 1 || numero > 999) {
+      input.setCustomValidity("Ingrese un número entre 1 y 999");
+    } else {
+      input.setCustomValidity("");
+    }
+  } else {
+    input.setCustomValidity("Ingrese un número válido");
+  }
 }

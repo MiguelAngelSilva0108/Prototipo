@@ -1,3 +1,1 @@
-<?PHP require('./paginas/inicio.php');
-
-?>
+<?PHP require('./paginas/inicio.php');?>

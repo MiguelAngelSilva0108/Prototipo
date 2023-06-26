@@ -1,5 +1,4 @@
-<?php
-if (!isset($_SESSION)) {
+<?php if (!isset($_SESSION)) {
     session_start();
 }
 
@@ -469,81 +468,94 @@ $nombreUsuario = isset($user) ? $user['Nombres'] . ' ' . $user['AP'] . ' ' . $us
 
 
     <?php
+ob_start(); // Iniciar el almacenamiento en búfer de salida
 
-    if (!empty($_POST['password'])) {
-        $password = $_POST['password'];
+// Resto del código
 
-        $message = '';
+if (!empty($_POST['password'])) {
+    $password = $_POST['password'];
 
-        // Realiza la comprobación de contraseña en el lado del servidor
-        $records = $conn->prepare('SELECT id_users, password FROM users WHERE id_users = :user_id');
-        $records->bindParam(':user_id', $_SESSION['user_id']);
-        $records->execute();
-        $results = $records->fetch(PDO::FETCH_ASSOC);
+    $message = '';
 
-        if (is_array($results) && count($results) > 0 && password_verify($password, $results['password'])) {
-            // Contraseña correcta, procede con la eliminación de la cuenta
-            // ...
-            if (isset($_SESSION['user_id'])) {
-                $deleteStmt = $conn->prepare('DELETE FROM users WHERE id_users = :id_users');
-                $deleteStmt->bindParam(':id_users', $_SESSION['user_id']);
+    // Realiza la comprobación de contraseña en el lado del servidor
+    $records = $conn->prepare('SELECT id_users, password FROM users WHERE id_users = :user_id');
+    $records->bindParam(':user_id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
 
-                if ($deleteStmt->execute()) {
-                    $message = 'Usuario eliminado exitosamente';
-                } else {
-                    $message = 'Error al eliminar el usuario';
-                }
+    if (is_array($results) && count($results) > 0 && password_verify($password, $results['password'])) {
+        // Contraseña correcta, procede con la eliminación de la cuenta
+        // ...
+        if (isset($_SESSION['user_id'])) {
+            $deleteStmt = $conn->prepare('DELETE FROM users WHERE id_users = :id_users');
+            $deleteStmt->bindParam(':id_users', $_SESSION['user_id']);
+
+            if ($deleteStmt->execute()) {
+                // Cerrar sesión
+                session_destroy();
+
+                // Mostrar mensaje de alerta
+                echo '<script>alert("Usuario eliminado exitosamente");</script>';
+
+                // Redirigir a la página principal
+                header("Location: ../index.php");
+                exit;
+            } else {
+                $message = 'Error al eliminar el usuario';
             }
-            session_unset();
-
-            session_destroy();
-            exit;
-        } else {
-            // Contraseña incorrecta, muestra un mensaje de error
-            $message = '<span style="color: red; font-weight: bold; font-family: Poppins; display: block; margin-top: 30px; text-align: center;">Contraseña incorrecta</span>';
         }
+    } else {
+        // Contraseña incorrecta, muestra un mensaje de error
+        $message = '<span style="color: red; font-weight: bold; font-family: Poppins; display: block; margin-top: 30px; text-align: center;">Contraseña incorrecta</span>';
     }
-    ?>
+}
 
-    <!-- Resto del código HTML -->
+?>
 
-    <!-- ELIMINAR CUENTA -->
-    <div class='delete'>
-        <form action="usuario.php" method="post">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3 offset-15 mt-5 mx-auto">
-                    <div class="card pt-5">
+<!-- Resto del código HTML -->
+
+<!-- ELIMINAR CUENTA -->
+<div class='delete'>
+    <form action="usuario.php" method="post">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 offset-15 mt-5 mx-auto">
+                <div class="card pt-5">
+                    <div class="card-header">
+                        ESTA ACCIÓN ELIMINARÁ TU CUENTA PERMANENTEMENTE
+                    </div>
+                    <div class="card-body">
                         <div class="card-header">
-                            ESTA ACCIÓN ELIMINARÁ TU CUENTA PERMANENTEMENTE
+                            Ingresa tu contraseña
                         </div>
-                        <div class="card-body">
-                            <div class="card-header">
-                                Ingresa tu contraseña
-                            </div>
-                            <?php if (!empty($message)): ?>
-                                <p class="text-danger mt-3">
-                                    <?php echo $message; ?>
-                                </p>
-                            <?php endif; ?>
-                            <!-- Botón de contraseña -->
-                            <div class="form-floating mb-3">
-                                <input type="password" name='password' class="form-control" id="floatingPassword"
-                                    placeholder="Password" required />
-                                <label htmlFor="floatingPassword">Contraseña</label>
-                            </div>
+                        <?php if (!empty($message)): ?>
+                            <p class="text-danger mt-3">
+                                <?php echo $message; ?>
+                            </p>
+                        <?php endif; ?>
+                        <!-- Botón de contraseña -->
+                        <div class="form-floating mb-3">
+                            <input type="password" name='password' class="form-control" id="floatingPassword"
+                                placeholder="Password" required />
+                            <label htmlFor="floatingPassword">Contraseña</label>
+                        </div>
 
-                            <!-- Fin de formulario -->
+                        <!-- Fin de formulario -->
 
-                            <div class="d-grid gap-2 mb-3">
-                                <button class="btn btn-primary" type="submit">ELIMINAR CUENTA</button>
-                            </div>
+                        <div class="d-grid gap-2 mb-3">
+                            <button class="btn btn-primary" type="submit">ELIMINAR CUENTA</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
-    <!-- FIN ELIMINAR CUENTA -->
+        </div>
+    </form>
+</div>
+<!-- FIN ELIMINAR CUENTA -->
+
+<?php
+ob_end_flush(); // Enviar el búfer de salida completo al navegador
+?>
+
 
     <script>
         // Borrar mensaje de error al escribir la contraseña

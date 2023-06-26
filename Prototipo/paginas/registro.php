@@ -39,7 +39,7 @@ if (!empty($_POST['Nombres']) && !empty($_POST['AP']) && !empty($_POST['AM']) &&
     $stmt->bindParam(':Estado_Condominio', $_POST['Estado_Condominio']);
 
     if ($stmt->execute()) {
-        $message = 'Usuario creado, inicie sesión';
+        $message = '<span class="success-message">Usuario creado, inicie sesión</span>';
     } else {
         $message = 'Ya hay un usuario registrado con estos mismo datos. Inicie Sesión';
     }

@@ -5,45 +5,38 @@
       case "pintura":
         $titulo = "Pintura interior y exterior";
         $imagen = "https://cdn-icons-png.flaticon.com/512/1276/1276892.png";
-        $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos pintar tu inmueble.";
-        $puntos = array(
-          array("id" => 1, "nombre" => "Pintura y repintado de áreas comunes"),
-          array("id" => 2, "nombre" => "Pintura antigrafitti"),
-          array("id" => 3, "nombre" => "Retoque de pintura"),
-          array("id" => 4, "nombre" => "Pintura a herrería")
-        );
+        $descripcion = "Si estás considerando renovar el aspecto de tu inmueble, te ayudamos a pintar tu inmueble.";
+        $puntos = array();
+        for ($i = 1; $i <= 4; $i++) {
+          $puntos[] = array("id" => $i);
+        }
         break;
       case "impermeabilizacion":
         $titulo = "Impermeabilización";
         $descripcion = 'Si te gustaría proteger tu inmueble frente a las diversas condiciones meteorológicas, la impermeabilización es la alternativa perfecta.';
         $imagen = "https://cdn-icons-png.flaticon.com/512/129/129817.png";
-        $puntos = array(
-          array("id" => 5, "nombre" => "Impermeabilización de techos del condominio (Caucho)"),
-          array("id" => 6, "nombre" => "Impermeabilización de techos del condominio (Terracota)"),
-          array("id" => 7, "nombre" => "Servicio de reparación de filtraciones"),
-          array("id" => 8, "nombre" => "Servicio de impermeabilización de paredes")
-        );
+        $puntos = array();
+        for ($i = 5; $i <= 8; $i++) {
+          $puntos[] = array("id" => $i);
+        }
         break;
       case "cisternas":
         $titulo = "Lavado y desinfección de Cisternas";
         $imagen = "https://cdn-icons-png.flaticon.com/512/3022/3022982.png";
         $descripcion = "Ofrecemos el servicio de lavado y desinfección de cisternas con equipos de alta tecnología y personal capacitado. Garantizamos la eliminación de cualquier tipo de residuo o contaminante que pueda afectar la calidad del agua en tu hogar o negocio.";
-        $puntos = array(
-          array("id" => 9, "nombre" => "1200 L"),
-          array("id" => 10, "nombre" => "2800 L"),
-          array("id" => 11, "nombre" => "5000 L"),
-          array("id" => 12, "nombre" => "10000 L")
-        );
+        $puntos = array();
+        for ($i = 9; $i <= 12; $i++) {
+          $puntos[] = array("id" => $i);
+        }
         break;
       case "tinacos":
         $titulo = "Lavado y desinfección de tinacos";
         $imagen = "https://cdn-icons-png.flaticon.com/512/7608/7608679.png";
         $descripcion = "Realizamos el lavado y desinfección de tinacos en casas y negocios. Utilizamos productos desinfectantes de alta calidad y equipo especializado para garantizar la eliminación de residuos y contaminantes que puedan afectar la calidad del agua.";
-        $puntos = array(
-          array("id" => 13, "nombre" => "De 450L a 600L"),
-          array("id" => 14, "nombre" => "De 600L a 1100L"),
-          array("id" => 15, "nombre" => "De 1100L a 2500L")
-        );
+        $puntos = array();
+        for ($i = 13; $i <= 15; $i++) {
+          $puntos[] = array("id" => $i);
+        }
         break;
       case "albercas":
         $titulo = "Limpieza de Albercas";

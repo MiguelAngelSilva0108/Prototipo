@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2023 a las 07:01:05
+-- Tiempo de generación: 26-06-2023 a las 03:02:33
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -24,10 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `required`
+--
+
+CREATE TABLE `required` (
+  `id_required` int(200) NOT NULL,
+  `id_users` int(200) NOT NULL,
+  `id_services` int(200) NOT NULL,
+  `fecha_servicio` date NOT NULL,
+  `hora_servicio` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `services`
 --
-CREATE DATABASE IF NOT EXISTS prototipo;
-USE prototipo;
 
 CREATE TABLE `services` (
   `id_services` int(11) NOT NULL,
@@ -41,21 +53,21 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id_services`, `Nombre`, `precio`, `medida`) VALUES
-(1, 'Pint_int', 135.00, 'm<sup>2</sup>'),
-(2, 'Pint_graf', 100.00, 'm<sup>2</sup>'),
-(3, 'Pint_retoque', 80.00, 'm<sup>2</sup>'),
-(4, 'Pint_herreria', 180.00, 'm<sup>2</sup>'),
-(5, 'Imper_caucho', 230.00, 'm<sup>2</sup>'),
-(6, 'Imper_terracota', 180.00, 'm<sup>2</sup>'),
-(7, 'filtraciones', 100.00, 'm<sup>2</sup>'),
-(8, 'Imper_Paredes', 180.00, 'm<sup>2</sup>'),
-(9, 'Cis_1200L', 852.30, 'Litros'),
-(10, 'Cis_2800L', 1145.99, 'Litros'),
-(11, 'Cis_5000L', 1987.60, 'Litros'),
-(12, 'Cis_5000L', 2897.41, 'Litros'),
-(13, 'Tin_450_600', 356.20, 'Litros'),
-(14, 'Tin_600_1100', 680.20, 'Litros'),
-(15, 'Tin_1100_2500', 893.20, 'Litros');
+(1, 'Pintura y repintado de áreas comunes', 135.00, 'm<sup>2</sup>'),
+(2, 'Pintura Antigraffiti', 100.00, 'm<sup>2</sup>'),
+(3, 'Retoque de pintura', 80.00, 'm<sup>2</sup>'),
+(4, 'Pintura a herrería', 180.00, 'm<sup>2</sup>'),
+(5, 'Impermeabilización de techos del condominio (Cauch', 250.00, 'm<sup>2</sup>'),
+(6, 'Impermeabilización de techos del condominio (Terra', 180.00, 'm<sup>2</sup>'),
+(7, 'Servicio de reparación de filtraciones', 100.00, 'm<sup>2</sup>'),
+(8, 'Servicio de impermeabilización de paredes', 180.00, 'm<sup>2</sup>'),
+(9, 'Cisterna de 1200L', 852.30, '1 Cisterna'),
+(10, 'Cisterna de 2800L', 1145.99, '1 Cisterna'),
+(11, 'Cisterna de 5000L', 1987.60, '1 Cisterna'),
+(12, 'Cisterna de 10000L', 2897.41, '1 Cisterna'),
+(13, 'Tinaco de 450L a 600L', 356.20, '1 Tinaco'),
+(14, 'Tinaco de 600L a 1100L', 680.20, '1 Tinaco'),
+(15, 'Tinaco de 1100L a 2500L', 893.20, '1 Tinaco');
 
 -- --------------------------------------------------------
 
@@ -77,7 +89,7 @@ CREATE TABLE `users` (
   `NumExt` varchar(200) NOT NULL,
   `NumInt` varchar(200) DEFAULT NULL,
   `Municipio` varchar(200) NOT NULL,
-  `CP` int(10) NOT NULL,
+  `CP` varchar(10) NOT NULL,
   `Estado` varchar(200) NOT NULL,
   `RFC` varchar(200) NOT NULL,
   `Nombre_Condominio` varchar(200) NOT NULL,
@@ -85,7 +97,7 @@ CREATE TABLE `users` (
   `Colonia_Condominio` varchar(200) NOT NULL,
   `NumExt_Condominio` varchar(200) NOT NULL,
   `Municipio_Condominio` varchar(200) NOT NULL,
-  `CP_Condominio` int(200) NOT NULL,
+  `CP_Condominio` varchar(10) NOT NULL,
   `Estado_Condominio` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -94,11 +106,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `Nombres`, `AP`, `AM`, `Celular`, `Email`, `password`, `Servicio`, `Calle`, `Colonia`, `NumExt`, `NumInt`, `Municipio`, `CP`, `Estado`, `RFC`, `Nombre_Condominio`, `Calle_Condominio`, `Colonia_Condominio`, `NumExt_Condominio`, `Municipio_Condominio`, `CP_Condominio`, `Estado_Condominio`) VALUES
-(1, 'Miguel Ángel', 'Silva', 'Bata', '5527826521', 'miguelxv74@gmail.com', '$2y$10$QIZM1iHDtoz46yAz.TDqa.DfdEFcLBptJRKbu3X/U5AO6kgT7G/Xa', 'Internet + Telefonía 50 MB', 'Berriozábal', 'Liberales de 1857', '12', NULL, 'Álvaro Obregón', 1110, 'Ciudad de México', 'Unidad Colorines II', 'SIBM010801SP0', 'Calle 5', 'Agrícola Pantitlán', '33', 'Iztacalco', 9830, 'Ciudad de México');
+(19, 'Miguel Ángel ', 'Silva ', 'Bata', '5527826521', 'miguelxv74@gmail.com', '$2y$10$V8aX3gwKpyh9oEejFe4xJuexug.ul3VwUztUuThUYBHaTmvh374hq', 'De 15 a 30 departamentos', 'Berriozabal', 'Liberales de 1857', '12', NULL, 'Álvaro Obregón', '01110', 'Jalisco', 'SIBM010801SP0', 'Unidad Colorines II', 'Calle 5', 'Agricola Pantitlan', '33', 'Iztacalco', '09830', 'Nayarit'),
+(21, 'Miguel Ángel ', 'Silva ', 'Bata', '5527826521', 'miguelxv74@gmail.com', '$2y$10$c1xmb5/ScdObmwZxNXha4.fbIvmARYWHZp/HuheduNC2/lZYvDt1a', 'De 15 a 30 departamentos', 'Berriozabal', 'Liberales de 1857', '12', NULL, 'Álvaro Obregón', '01110', 'Jalisco', 'SIBM010801SP0', 'Unidad Colorines II', 'Calle 5', 'Agricola Pantitlan', '33', 'Iztacalco', '09830', 'Nayarit'),
+(22, 'José', 'Madero', 'Vizcaíno', '5527826521', 'miguelxv74@hotmail.com', '$2y$10$S9GhTBczfCXz4nTYXA/M3eqR3yUWXAPIrHltdHvFZAp.QDj5xJQne', 'De 15 a 30 departamentos', 'Avenida Providencia', 'La bonita', '1504-A', 'B-405', 'Oaxaca', '08502', 'Oaxaca', 'SIBM010801SP0', 'Cerrado', '15', 'Bonito', '33', 'Oaxaca', '01510', 'Ciudad de México');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `required`
+--
+ALTER TABLE `required`
+  ADD PRIMARY KEY (`id_required`);
 
 --
 -- Indices de la tabla `services`
@@ -117,6 +137,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `required`
+--
+ALTER TABLE `required`
+  MODIFY `id_required` int(200) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `services`
 --
 ALTER TABLE `services`
@@ -126,7 +152,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_users` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
